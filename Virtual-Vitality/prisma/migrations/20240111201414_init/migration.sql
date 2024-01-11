@@ -90,6 +90,9 @@ CREATE UNIQUE INDEX "Payment_cardNumber_key" ON "Payment"("cardNumber");
 CREATE UNIQUE INDEX "Payment_userId_key" ON "Payment"("userId");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Workout_typeOfWorkout_key" ON "Workout"("typeOfWorkout");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "_assignedUsers_AB_unique" ON "_assignedUsers"("A", "B");
 
 -- CreateIndex
@@ -97,6 +100,9 @@ CREATE INDEX "_assignedUsers_B_index" ON "_assignedUsers"("B");
 
 -- AddForeignKey
 ALTER TABLE "Coach" ADD CONSTRAINT "Coach_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Coach" ADD CONSTRAINT "Coach_workoutType_fkey" FOREIGN KEY ("workoutType") REFERENCES "Workout"("typeOfWorkout") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Payment" ADD CONSTRAINT "Payment_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
