@@ -14,12 +14,19 @@ CREATE TABLE "User" (
 CREATE TABLE "Coach" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "workoutType" TEXT NOT NULL,
     "isNutritionist" BOOLEAN NOT NULL,
     "imgURL" TEXT NOT NULL,
     "userId" INTEGER NOT NULL,
 
     CONSTRAINT "Coach_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "WorkoutType" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+
+    CONSTRAINT "WorkoutType_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -53,6 +60,7 @@ CREATE TABLE "Workout" (
     "name" TEXT NOT NULL,
     "typeOfWorkout" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "workoutTypeId" INTEGER NOT NULL,
 
     CONSTRAINT "Workout_pkey" PRIMARY KEY ("id")
 );
@@ -70,6 +78,12 @@ CREATE TABLE "ExcercisesOnWorkouts" (
 
 -- CreateTable
 CREATE TABLE "_assignedUsers" (
+    "A" INTEGER NOT NULL,
+    "B" INTEGER NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "_CoachToWorkoutType" (
     "A" INTEGER NOT NULL,
     "B" INTEGER NOT NULL
 );
@@ -98,14 +112,20 @@ CREATE UNIQUE INDEX "_assignedUsers_AB_unique" ON "_assignedUsers"("A", "B");
 -- CreateIndex
 CREATE INDEX "_assignedUsers_B_index" ON "_assignedUsers"("B");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "_CoachToWorkoutType_AB_unique" ON "_CoachToWorkoutType"("A", "B");
+
+-- CreateIndex
+CREATE INDEX "_CoachToWorkoutType_B_index" ON "_CoachToWorkoutType"("B");
+
 -- AddForeignKey
 ALTER TABLE "Coach" ADD CONSTRAINT "Coach_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Coach" ADD CONSTRAINT "Coach_workoutType_fkey" FOREIGN KEY ("workoutType") REFERENCES "Workout"("typeOfWorkout") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Payment" ADD CONSTRAINT "Payment_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Payment" ADD CONSTRAINT "Payment_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Workout" ADD CONSTRAINT "Workout_workoutTypeId_fkey" FOREIGN KEY ("workoutTypeId") REFERENCES "WorkoutType"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "ExcercisesOnWorkouts" ADD CONSTRAINT "ExcercisesOnWorkouts_excerciseId_fkey" FOREIGN KEY ("excerciseId") REFERENCES "Excercise"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -118,3 +138,9 @@ ALTER TABLE "_assignedUsers" ADD CONSTRAINT "_assignedUsers_A_fkey" FOREIGN KEY 
 
 -- AddForeignKey
 ALTER TABLE "_assignedUsers" ADD CONSTRAINT "_assignedUsers_B_fkey" FOREIGN KEY ("B") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_CoachToWorkoutType" ADD CONSTRAINT "_CoachToWorkoutType_A_fkey" FOREIGN KEY ("A") REFERENCES "Coach"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_CoachToWorkoutType" ADD CONSTRAINT "_CoachToWorkoutType_B_fkey" FOREIGN KEY ("B") REFERENCES "WorkoutType"("id") ON DELETE CASCADE ON UPDATE CASCADE;
