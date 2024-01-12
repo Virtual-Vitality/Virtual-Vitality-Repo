@@ -1,4 +1,14 @@
 import { useState } from "react";
+import { Routes } from "react-router";
+import example_function from "./Workouts-page";
+import example_function2 from "./SingleWorkout-page";
+import example_function3 from "./Registration-page";
+import example_function4 from "./Nutrition-page";
+import example_function5 from "./Login-Page";
+import example_function6 from "./Home-page";
+import example_function7 from "./Exercise-page";
+import example_function8 from "./Coaches-page";
+
 const Nav = () => {
   const [open, setOpen] = useState(true);
   const Menus = [//This is images and titles
@@ -16,7 +26,7 @@ const Nav = () => {
     <div className="flex">
       <div
         className={` ${
-          open ? " h-max w-72 " : "w-20 "
+          open ? " h-auto w-72 " : "w-20 "
         } bg-slate-500 h-screen p-5  pt-8 relative duration-300`}
       >
         <img
@@ -60,8 +70,19 @@ const Nav = () => {
       <div className="h-screen flex-1 p-7">
         <h1 className="text-2xl font-semibold ">Home Page</h1>
       </div>
+      {/* <Routes>
+        <Route path ="/"element={<example_function6/>} />
+        <Route path ="/coaches"element={<example_function8/>} />
+        <Route path ="/Nutrition"element={<example_function4/>} />
+        <Route path ="/Registration"element={<example_function3/>} />
+        <Route path ="/Login-page"element={<example_function5/>} />
+        <Route path ="/Single-Workouts-page"element={<example_function2/>} />
+        <Route path ="/Workouts-page"element={<example_function/>} />
+        <Route path ="/Exercise-page"element={<example_function7/>} />
+      </Routes> */}
     </div>
   );
+
   //ROUTES go here 
 };
 export default Nav;
