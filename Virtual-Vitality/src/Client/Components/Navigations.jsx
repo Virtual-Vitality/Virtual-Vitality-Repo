@@ -27,7 +27,7 @@ const Nav = () => {
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "
-        } bg-slate-500 h-screen p-5  pt-8 relative duration-300`}
+        } bg-slate-500 h-screen p-3 pt-8 relative duration-300`}
       >
         <img
           src="./src/Assets/mastercontrol.png"

@@ -1,3 +1,4 @@
+
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -47,10 +48,8 @@ const Example_function3= () =>{
           <Form.Control />
         </Form.Group>
       </Row>
+    <button className='border-solid border border-x-cyan-950 '>Submit</button>
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
     </Form>
 
   );
