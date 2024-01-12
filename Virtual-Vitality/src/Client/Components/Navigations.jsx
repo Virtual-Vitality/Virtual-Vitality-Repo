@@ -23,7 +23,7 @@ const Nav = () => {
   ];
 //STYLING below
   return (
-    <div className="flex">
+    <div className=" flex">
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "
@@ -67,7 +67,7 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex-1 p-7">
+      <div className="h-screen flex p-10">
        
        <Routes>
         <Route path="/"element={<Example_function6/>} />
