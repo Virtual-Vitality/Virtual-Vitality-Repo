@@ -23,15 +23,21 @@ model User {
 }
 
 model Coach {
-  id                Int     @id @default(autoincrement())
-  name              String
-  workoutType       String
-  isNutritionist    Boolean
-  imgURL            String
-  userId            Int     @unique
-  userInfo          User    @relation(fields: [userId], references: [id])
-  assignedUsers     User[]  @relation("assignedUsers")
-  workOutPreference Workout @relation(fields: [workoutType], references: [typeOfWorkout])
+  id             Int         @id @default(autoincrement())
+  name           String
+  isNutritionist Boolean
+  imgURL         String
+  userId         Int         @unique
+  userInfo       User        @relation(fields: [userId], references: [id])
+  assignedUsers  User[]      @relation("assignedUsers")
+  workoutTypes    WorkoutType[] 
+}
+
+model WorkoutType {
+  id       Int       @id @default(autoincrement())
+  name     String
+  coaches  Coach[]
+  workouts Workout[]
 }
 
 model Payment {
@@ -58,10 +64,10 @@ model Excercise {
 model Workout {
   id                   Int                    @id @default(autoincrement())
   name                 String
-  typeOfWorkout        String                 @unique
   description          String
   ExcercisesOnWorkouts ExcercisesOnWorkouts[]
-  Coach                Coach[]
+  WorkoutType          WorkoutType           @relation(fields: [workoutTypeId], references: [id])
+  workoutTypeId        Int
 }
 
 model ExcercisesOnWorkouts {
