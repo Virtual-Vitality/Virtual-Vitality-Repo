@@ -1,13 +1,7 @@
-
-import './App.css'
-
-function App() {
-
-  return (
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+import Nav from "./Client/Components/Navigations"
+const App = () => {
+  return(
+    <><Nav/></>
   )
 }
-
-export default App
+export default App;
