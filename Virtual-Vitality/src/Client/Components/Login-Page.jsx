@@ -1,16 +1,30 @@
-import Form from 'react-bootstrap/Form';
-const Example_function5= () =>{
-    return(
-        <Form>
-        <Form.Group className="mb-3" controlId="formGroupEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+
+import React,{ useState } from 'react';
+import { Form, Row, Col, Button } from 'react-bootstrap';
+import Modal from 'react-modal';
+import { useAuth } from './AuthContext';
+
+const Login = () => {
+  return (
+    <Form>
+      <Row className="mb-3">
+      <Form.Group as={Col} controlId="formGridUsername">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" placeholder="Enter username" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formGroupPassword">
+
+        <Form.Group as={Col} controlId="formGridPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-      </Form>
-    )
-}
-export default Example_function5
+      </Row>
+
+      <Button variant="primary" type="submit">
+        Login
+      </Button>
+    </Form>
+  );
+};
+
+export default Login;
+
