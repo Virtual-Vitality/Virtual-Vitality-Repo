@@ -19,7 +19,7 @@ const Nav = () => {
     {title: "Registration", src: "calendar2", path: (`/Registration`)},
     {title: "Login", src: "search", path: (`/Login-page`)},
     {title: "Single-Workout", src: "analytics", path: (`/Single-Workouts-page`)},
-    {title: "Exercise", src: "folder1", path: (`/Exercise-apge`), gap : true},
+    {title: "Exercise", src: "folder1", path: (`/Exercise-page`), gap : true},
     {title: "Workouts", src: "setting", path: (`/Workouts-page`)},
   ];
 //STYLING below
@@ -48,7 +48,7 @@ const Nav = () => {
               !open && "scale-0"
             }`}
           >
-            Designer
+            Virtual Vitality
           </h1>
         </div>
         <ul className="pt-6">
