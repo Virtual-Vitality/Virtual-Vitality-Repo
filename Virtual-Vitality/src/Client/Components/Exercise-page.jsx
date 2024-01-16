@@ -4,12 +4,13 @@ import { useEffect, useState} from "react";
 
 
 const Exercises= () =>{
-    const [exercises, setExercises] = useState("");
+    const [exercises, setExercises] = useState([]);
 
     useEffect(() => {
-        const getExercises = async () => {
+        async function getExercises() {
             try {
                 const { data: foundExercises } = await axios.get("/api/exercises");
+                console.log(foundExercises)
                 setExercises(foundExercises);
             } catch (error) {
                 console.error(error);
@@ -17,7 +18,7 @@ const Exercises= () =>{
         }
         getExercises();
     });
-
+    console.log(exercises);
     return(
         exercises.map((exercise) => {
             return(
@@ -25,10 +26,9 @@ const Exercises= () =>{
       <Card.Img variant="top" src="holder.js/100px180" alt='Exercise Photo' />
       <Card.Body>
         <Card.Title>{exercise.title}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Text> Muscle Group: {exercise.muscleGroup}</Card.Text>
+        <Card.Text> Description: {exercise.description}</Card.Text>
+        <Card.Text> Video Link: {exercise.videoLink}</Card.Text>
       </Card.Body>
     </Card>
             )

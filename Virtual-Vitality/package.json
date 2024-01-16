@@ -2,9 +2,10 @@
   "name": "virtual-vitality",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "seed" : "npx prisma migrate reset && node seed.cjs",
+    "seed": "npx prisma migrate reset && node seed.cjs",
+    "start": "NODE_ENV=production node src/Server/main.cjs",
+    "start:dev": "nodemon src/Server/main.cjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -25,7 +26,8 @@
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
     "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^6.21.1",
+    "vite-express": "^0.13.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

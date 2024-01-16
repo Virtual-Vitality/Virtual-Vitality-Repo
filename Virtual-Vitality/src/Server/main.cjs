@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const ViteExpress = require("vite-express");
 require("dotenv").config();
 const app = express();
+const port = process.env.PORT || 4200;
 
 
 
@@ -11,8 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", require("./API"));
-app.use("/auth", require("./AUTH"));
+// app.use("/auth", require("./Auth"));
 
-ViteExpress.listen(app, 3000, () =>
-  console.log("Server is listening on port 3000...")
-);
+app.listen(port, () =>
+ console.log(`Server is listening on port ${port}`))
+;
