@@ -5,7 +5,7 @@ const router = express.Router();
 // router.use("/coaches", require("./coaches"));
 
 // /API/exercises
-router.use("/exercises", require("./exercises"));
+// router.use("/exercises", require("./exercises"));
 
 // /API/users
 // router.use("/users", require("./users"));
