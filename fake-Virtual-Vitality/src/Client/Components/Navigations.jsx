@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState} from "react";
+import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import Example_function from "./Workouts-page";
 import Example_function2 from "./SingleWorkout-page";
@@ -12,14 +13,14 @@ import Example_function8 from "./Coaches-page";
 const Nav = () => {
   const [open, setOpen] = useState(true);
   const Menus = [//This is images and titles
-    {title: "Dashboard", src: "home1"},
-    {title: "Inbox", src: "messages2"},
-    {title: "Accounts", src: "user1", gap:true},
-    {title: "Schedule", src: "calendar2"},
-    {title: "Search", src: "search"},
-    {title: "Analytics", src: "analytics"},
-    {title: "Files", src: "folder1", gap : true},
-    {title: "Settings", src: "setting"},
+    {title: "Dashboard", src: "home1", path:('/')},
+    {title: "Coaches", src: "messages2", path:('/coaches')},
+    {title: "Nutrition", src: "user1", path:('/Nutrtition'), gap:true},
+    {title: "Register", src: "calendar2", path:('/Registration')},
+    {title: "Login", src: "search", path:('/Login-page')},
+    {title: "Single-Workouts", src: "analytics", path:('/Single-Workouts-page')},
+    {title: "Workout List", src: "folder1", path:('/Workouts-page'), gap : true},
+    {title: "Exercise Page", src: "setting", path:('/Exercise-page')},
   ];
 //STYLING below
   return (
@@ -27,7 +28,7 @@ const Nav = () => {
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "
-        } bg-slate-500 h-screen p-5  pt-8 relative duration-300`}
+        } bg-slate-500 h-screen p-3  pt-8 relative duration-300`}
       >
         <img
           src="./src/Assets/mastercontrol.png"
@@ -52,11 +53,12 @@ const Nav = () => {
         </div>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
+            <Link to = {Menu.path}>
             <li
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
+                index === 0 
               } `}
             >
               <img src={`./src/Assets/${Menu.src}.png`} />
@@ -64,6 +66,7 @@ const Nav = () => {
                 {Menu.title}
               </span>
             </li>
+              </Link>
           ))}
         </ul>
       </div>
