@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "seed": "npx prisma migrate reset && node seed.cjs",
-    "dev": "nodemon src/Server/main.cjs -w src/Server",
-    "start": "NODE_ENV=production node src/server/main.cjs",
+    "dev": "nodemon src/server/main.cjs -w src/server",
+    "start:dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
