@@ -1,8 +1,7 @@
 
 import React,{ useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
-import Modal from 'react-modal';
-import { useAuth } from './AuthContext';
+
 
 const Login = () => {
   return (
