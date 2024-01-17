@@ -60,6 +60,17 @@ async function seed () {
             isCoach : true,
         },
     });
+
+    const hashedUser6 = await bcrypt.hash("password", saltrounds);
+    const user6 = await prisma.user.create({
+        data: {
+            name: "Carter",
+            email: "carter@yahoo.com",
+            userName: "Carter222",
+            password : hashedUser6,
+            isCoach : true,
+        },
+    });
     
     const workoutType1 = await prisma.workoutType.create({
         data: {
@@ -179,6 +190,16 @@ async function seed () {
             imgURL: "add image here",
             userId: 2,
             workoutTypes: { connect: [workoutType2]} ,
+        },
+     });
+
+     const coach3 = await prisma.coach.create({
+        data: {
+            name: "Carter",
+            isNutritionist: true,
+            imgURL: "add image here",
+            userId: 6,
+            workoutTypes: { connect: [workoutType1]} ,
         },
      });
 
