@@ -96,5 +96,5 @@ const Example_function3= () =>{
     </Form>
 
   );
-}
+}}
 export default Example_function3
