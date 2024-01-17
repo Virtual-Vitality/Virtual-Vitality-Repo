@@ -2,9 +2,32 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import { useState } from 'react';
+import axios from "axios";
+import { useNavigate } from 'react-router';
+
+
 const Example_function3= () =>{
+  const navigate = useNavigate();
+  const [emailInput,setemailInput] = useState('');
+  const [passwordInput,setpasswordInput] = useState('');
+  const [addressInput,setaddressInput] = useState('');
+  const [address2Input,setaddress2Input] = useState('');
+  const [cityInput,setcityInput] = useState('');
+  const [stateInput,setstateInput] = useState('');
+  const [zipInput,setzipInput] = useState('');
+  const [accountnumInput,setaccountnumInput] = useState('');
+  const [cvvInput,setcvvInput] = useState('');
+  const [expInput,setexpInput] = useState('');
+
+  const handleSubmit = async(event) =>{
+    e.prevent.default();
+    try{
+      /*const result = axios.post(`/Register route`) */
+    }catch{
+
+    }
     return(
-     
     <Form>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
@@ -46,6 +69,25 @@ const Example_function3= () =>{
           <Form.Label>Zip</Form.Label>
           <Form.Control />
         </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Account Number</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>CVV</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>exp date</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+
+
+
+
       </Row>
 
       <Button variant="primary" type="submit">
