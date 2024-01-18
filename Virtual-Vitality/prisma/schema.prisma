@@ -17,7 +17,7 @@ model User {
   userName  String   @unique
   password  String
   payment   Payment?
-  isCoach   Boolean
+  isCoach   Boolean  @default(false)
   coachInfo Coach?
   coaches   Coach[]  @relation("assignedUsers")
 }
