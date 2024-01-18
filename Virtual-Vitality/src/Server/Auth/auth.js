@@ -2,9 +2,9 @@ const express = require('express');
 const { PrismaClient } =require('@prisma/client');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
 const router = express.Router();
 const prisma = new PrismaClient();
+
 
 
 
@@ -28,6 +28,45 @@ router.post('/login', async (req, res, next) => {
         next(error);
     }
 });
+router.post('/Register', async (req, res, next) =>{
+    const {name, email, userName, password, isCoach} =req.body;
+    const saltRounds = 5;
+    try {
+        const hashPassword = await bcrypt.hash(password, saltRounds);
+        const user = await prisma.user.create({
+            data: {
+                name, 
+                email, 
+                userName, 
+                password: hashPassword,
+                isCoach
+            }
+        })
+        const token = jwt.sign({id: user.id, userName: user.userName}, 
+			process.env.JWT_SECRET);
+		res.status(201).send({token});
+        res.send(user)
+        console.log(`This works 1`)
+    } catch (error) {
+        console.log(error)
+    } 
+    console.log(`this works`)
+});
+
 
 
 module.exports = router;
+// router.post('/register', async (req, res, next) => {
+//     const { cardHolderName,cardNumber,expiration,cvv,zipCode } = req.body;   
+//     try {
+//         const paymentInfo = await prisma.payment.create({
+//             data:{cardHolderName,
+//             cardNumber,
+//             expiration,
+//             cvv,
+//             zipCode}
+//         })
+//     } catch (error) {
+        
+//     }
+// }
