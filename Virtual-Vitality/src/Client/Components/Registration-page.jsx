@@ -19,14 +19,16 @@ const Example_function3= () =>{
   const [accountnumInput,setaccountnumInput] = useState('');
   const [cvvInput,setcvvInput] = useState('');
   const [expInput,setexpInput] = useState('');
+  const [cardHolderInput,setcardHolderInput] = useState('');
 
-  const handleSubmit = async(event) =>{
-    e.prevent.default();
-    try{
-      /*const result = axios.post(`/Register route`) */
-    }catch{
 
-    }
+  // const handleSubmit = async(event) =>{
+  //   e.prevent.default();
+  //   try{
+  //     /*const result = axios.post(`/Register route`) */
+  //   }catch{
+
+  //   }
     return(
     <Form>
       <Row className="mb-3">
@@ -85,6 +87,12 @@ const Example_function3= () =>{
           <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
 
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Card Holder Name</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+
+
 
 
 
@@ -95,6 +103,6 @@ const Example_function3= () =>{
       </Button>
     </Form>
 
-  );
-}}
+    )
+}
 export default Example_function3

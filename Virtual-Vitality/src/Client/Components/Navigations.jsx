@@ -7,7 +7,7 @@ import Example_function3 from "./Registration-page";
 import Example_function4 from "./Nutrition-page";
 import Example_function5 from "./Login-Page";
 import Example_function6 from "./Home-page";
-import Example_function7 from "./Exercise-page";
+import Exercises from "./Exercise-page";
 import Example_function8 from "./Coaches-page";
 
 const Nav = () => {
@@ -81,7 +81,7 @@ const Nav = () => {
         <Route path="/Login-page"element={<Example_function5/>} />
         <Route path="/Single-Workouts-page"element={<Example_function2/>} />
         <Route path="/Workouts-page"element={<Example_function/>} />
-        <Route path="/Exercise-page"element={<Example_function7/>} />
+        <Route path="/Exercise-page"element={<Exercises/>} />
       </Routes> 
       </div>
     </div>
