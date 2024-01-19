@@ -40,7 +40,11 @@ router.post('/Register', async (req, res, next) =>{
                 userName, 
                 password: hashPassword,
                 isCoach
+                //
+                //
+                //
             }
+            
         })
         const token = jwt.sign({id: user.id, userName: user.userName}, 
 			process.env.JWT_SECRET);
