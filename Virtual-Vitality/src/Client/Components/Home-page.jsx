@@ -56,7 +56,7 @@ const Example_function6= () =>{
                 <Carousel.Item interval={700}>
                     <img
                         width={1000} height={420}
-                        src="https://elcomercio.pe/resizer/zcfTPQ4hXTIUHs1U4Eemma-D9_I=/1200x675/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/SJSN5FYUAJGAXBN77IL4CNW5OI.jpg"
+                        src="https://images.unsplash.com/photo-1696446700088-3e800f748407?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="fifth slide"
                     />
                     <Carousel.Caption>
