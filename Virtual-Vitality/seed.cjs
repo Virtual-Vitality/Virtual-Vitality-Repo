@@ -207,101 +207,101 @@ async function seed () {
 
      const exercise1 = await prisma.excercise.create({
         data: {
-            name: "push ups",
+            name: "Push Ups",
             muscleGroup: "upper body",
             description: "great for the core",
-            imgUrl: "add img here",
+            imgUrl: "./src/Assets/Pushup.jpg",
             videoLink: "https://www.youtube.com/embed/1Pi0w8bUHPY",
         },
      });
 
      const exercise2 = await prisma.excercise.create({
         data: {
-            name: "jumping jacks",
+            name: "Jumping Jacks",
             muscleGroup: "full body",
             description: "great for the core",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/JumpingJack.jpg",
+            videoLink: "https://www.youtube.com/embed/nwaFHDQP2YU?si=icEG3nitmvy0gUos",
         },
      });
      const exercise3 = await prisma.excercise.create({
         data: {
-            name: "sit ups",
+            name: "Sit Ups",
             muscleGroup: "stomach",
             description: "great for the abs",
-            imgUrl: "https://plus.unsplash.com/premium_photo-1663050861006-5249d781336f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2l0JTIwdXBzfGVufDB8fDB8fHww",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Situp.jpg",
+            videoLink: "https://www.youtube.com/embed/PvbA9V2_2Wk?si=AehfyiA0jHtYjv6z",
         },
      });
 
      const exercise4 = await prisma.excercise.create({
         data: {
-            name: "squats",
+            name: "Squats",
             muscleGroup: "glutes",
             description: "core strength",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Squat.jpg",
+            videoLink: "https://www.youtube.com/embed/Toq-5vzwdFU?si=G8FT-Z6lHKnjwZVo",
         },
      });
 
      const exercise5 = await prisma.excercise.create({
         data: {
-            name: "burpees",
+            name: "Burpees",
             muscleGroup: "full body",
             description: "increase stanmina and strength",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Burpee.jpg",
+            videoLink: "https://www.youtube.com/embed/auBLPXO8Fww?si=bT1uS93WI-6T-cuf",
         },
      });
 
 
      const exercise6 = await prisma.excercise.create({
         data: {
-            name: "lunges",
+            name: "Lunges",
             muscleGroup: "legs",
             description: "iron legs",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Lunge.jpg",
+            videoLink: "https://www.youtube.com/embed/DlhojghkaQ0?si=FdSZdx78k5ufMXbU",
         },
      });
 
      const exercise7 = await prisma.excercise.create({
         data: {
-            name: "running",
+            name: "Running",
             muscleGroup: "legs and core",
             description: "stamina",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Running.jpg",
+            videoLink: "https://www.youtube.com/embed/3r7d4qhKCp8?si=lkigFMxshzzf2Coy",
         },
      });
 
      const exercise8 = await prisma.excercise.create({
         data: {
-            name: "jump rope",
+            name: "Jump Rope",
             muscleGroup: "full body",
             description: "great for the abs",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/JumpingRope.jpg",
+            videoLink: "https://www.youtube.com/embed/Z1DSRtSA61o?si=30SGCWy0t0npsY5U",
         },
      });
 
      const exercise9 = await prisma.excercise.create({
         data: {
-            name: "planks",
+            name: "Planks",
             muscleGroup: "core",
             description: "great for the abs",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Plank.jpg",
+            videoLink: "https://www.youtube.com/embed/4e-E9tic0V8?si=x4x_IXyGdhARPyyM",
         },
      });
 
      const exercise10 = await prisma.excercise.create({
         data: {
-            name: "swimming",
+            name: "Swimming",
             muscleGroup: "full body",
             description: "fitness under the sea",
-            imgUrl: "add img here",
-            videoLink: "add link here",
+            imgUrl: "./src/Assets/Swimming.jpg",
+            videoLink: "https://www.youtube.com/embed/hY4YileHEiA?si=9-l9kMvjNeqUqz8l",
         },
      });
 
