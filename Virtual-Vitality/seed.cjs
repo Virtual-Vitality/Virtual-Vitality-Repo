@@ -211,7 +211,7 @@ async function seed () {
             muscleGroup: "upper body",
             description: "great for the core",
             imgUrl: "add img here",
-            videoLink: "add link here",
+            videoLink: "https://www.youtube.com/embed/1Pi0w8bUHPY",
         },
      });
 
@@ -229,7 +229,7 @@ async function seed () {
             name: "sit ups",
             muscleGroup: "stomach",
             description: "great for the abs",
-            imgUrl: "add img here",
+            imgUrl: "https://plus.unsplash.com/premium_photo-1663050861006-5249d781336f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2l0JTIwdXBzfGVufDB8fDB8fHww",
             videoLink: "add link here",
         },
      });

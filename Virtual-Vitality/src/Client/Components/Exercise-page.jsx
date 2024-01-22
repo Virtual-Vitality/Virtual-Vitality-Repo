@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import React, { useEffect, useState} from "react";
+import { } from 'react-bootstrap';
 
 
 const Exercises= () =>{
@@ -21,16 +22,16 @@ const Exercises= () =>{
     console.log(exercises);
 
     return (
-        <div className="container mx-auto">
+        <div >
         <div className="grid grid-cols-3 gap-4">
           {exercises.map((exercise) => (
             <Card style={{ width: '18rem' }} key={exercise.id}>
-              <Card.Img variant="top" src="holder.js/100px180" alt='Exercise Photo' />
-              <Card.Body>
-                <Card.Title>{exercise.title}</Card.Title>
+              <Card.Img width="250" height="150" variant="top" src={} alt='Exercise Photo' />
+              <Card.Body >
+                <Card.Title>{exercise.name}</Card.Title>
                 <Card.Text> Muscle Group: {exercise.muscleGroup}</Card.Text>
                 <Card.Text> Description: {exercise.description}</Card.Text>
-                <Card.Text> Video Link: {exercise.videoLink}</Card.Text>
+                <iframe width="250" height="150" src={exercise.videoLink} title="Exercise Video | Push Ups Video For Editing | Gym Video | Stock Video | Free Footage | Free Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
               </Card.Body>
             </Card>
           ))}
