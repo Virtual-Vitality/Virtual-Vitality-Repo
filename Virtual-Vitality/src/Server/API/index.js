@@ -11,7 +11,7 @@ router.use("/exercises", require("./exercises"));
 // router.use("/users", require("./users"));
 
 // /API/workouts
-// router.use("/workouts", require("./workouts"));
+router.use("/workouts", require("./workouts"));
 
 router.use("/", (req, res) => {
     res.send(`Welcome to the API`);
