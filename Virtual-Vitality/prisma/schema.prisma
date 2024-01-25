@@ -11,26 +11,33 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  userName  String   @unique
-  password  String
-  payment   Payment?
-  isCoach   Boolean  @default(false)
-  coachInfo Coach?
-  coaches   Coach[]  @relation("assignedUsers")
+  id           Int            @id @default(autoincrement())
+  name         String
+  email        String         @unique
+  userName     String         @unique
+  password     String
+  payment      Payment?
+  coaches      Coach[]        @relation("assignedUsers")
+  appointments Appointments[]
+}
+
+model Appointments {
+  id      Int    @id @default(autoincrement())
+  date    String
+  coachId Int
+  userId  Int
+  coach   Coach  @relation(fields: [coachId], references: [id])
+  user    User   @relation(fields: [userId], references: [id])
 }
 
 model Coach {
-  id             Int         @id @default(autoincrement())
+  id             Int            @id @default(autoincrement())
   name           String
   isNutritionist Boolean
   imgURL         String
-  userId         Int         @unique
-  userInfo       User        @relation(fields: [userId], references: [id])
-  assignedUsers  User[]      @relation("assignedUsers")
-  workoutTypes    WorkoutType[] 
+  assignedUsers  User[]         @relation("assignedUsers")
+  workoutTypes   WorkoutType[]
+  appointments   Appointments[]
 }
 
 model WorkoutType {
@@ -66,7 +73,7 @@ model Workout {
   name                 String
   description          String
   ExcercisesOnWorkouts ExcercisesOnWorkouts[]
-  WorkoutType          WorkoutType           @relation(fields: [workoutTypeId], references: [id])
+  WorkoutType          WorkoutType            @relation(fields: [workoutTypeId], references: [id])
   workoutTypeId        Int
 }
 
