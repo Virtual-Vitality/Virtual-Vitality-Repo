@@ -13,14 +13,14 @@ import Scheduler from "./calendar";
 const Nav = () => {
   const [open, setOpen] = useState(true);
   const Menus = [//This is images and titles
-    {title: "Dashboard", src: "home1", path: (`/`)},
-    {title: "Coaches", src: "messages2", path: (`/coaches`)},
-    {title: "Nutrition", src: "user1", path: (`/Nutrition`), gap:true},
-    {title: "Registration", src: "calendar2", path: (`/Registration`)},
-    {title: "Login", src: "search", path: (`/Login-page`)},
-    {title: "Schedule", src: "analytics", path: (`/Scheduler`)},
-    {title: "Exercise", src: "folder1", path: (`/Exercise-page`), gap : true},
-    {title: "Workouts", src: "setting", path: (`/Workouts-page`)},
+    {title: "Home", src: "icons8-home-48", path: (`/`)},
+    {title: "Coaches", src: "icons8-coach-48 (1)", path: (`/coaches`)},
+    {title: "Nutrition", src: "icons8-salad-48", path: (`/Nutrition`), gap:true},
+    {title: "Registration", src: "icons8-register-48 (1)", path: (`/Registration`)},
+    {title: "Login", src: "icons8-log-in-50", path: (`/Login-page`)},
+    {title: "Schedule", src: "calendar2", path: (`/Scheduler`)},
+    {title: "Exercise", src: "icons8-exercise-48", path: (`/Exercise-page`), gap : true},
+    {title: "Workouts", src: "icons8-protein-supplement-48", path: (`/Workouts-page`)},
   ];
 //STYLING below
   return (
