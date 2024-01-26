@@ -11,10 +11,10 @@ router.use("/exercises", require("./exercises"));
 router.use("/users", require("./users"));
 
 // /API/workouts
-router.use("/workouts", require("./workouts"));
+//router.use("/workouts", require("./workouts"));
 
 // /API/Appointments
-router.use("/appointments", require("./appointnemnts"));
+router.use("/appointments", require("./appointments"));
 
 router.use("/", (req, res) => {
     res.send(`Welcome to the API`);
