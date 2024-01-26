@@ -71,7 +71,7 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex p-10">
+      <div className="h-screen w-screen flex p-3">
        
        <Routes>
         <Route path="/"element={<Example_function6/>} />
