@@ -31,7 +31,7 @@ const Nav = () => {
         } bg-slate-500 h-screen p-3  pt-8 relative duration-300`}
       >
         <img
-          src="./src/Assets/mastercontrol.png"
+          src="/assets/mastercontrol.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
@@ -71,7 +71,7 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex p-10">
+      <div className="h-screen w-screen flex p-3">
        
        <Routes>
         <Route path="/"element={<Example_function6/>} />
