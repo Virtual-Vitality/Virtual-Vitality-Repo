@@ -2,8 +2,6 @@ import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import React, { useEffect, useState} from "react";
 
-
-
 const Exercises= () =>{
     const [exercises, setExercises] = useState([]);
 
