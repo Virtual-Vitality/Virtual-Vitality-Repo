@@ -2,13 +2,13 @@ import { useState } from "react";
 import {Link} from "react-router-dom";
 import { Route, Routes } from "react-router";
 import Example_function from "./Workouts-page";
-import Example_function2 from "./SingleWorkout-page";
 import Example_function3 from "./Registration-page";
 import Example_function4 from "./Nutrition-page";
 import Example_function5 from "./Login-Page";
 import Example_function6 from "./Home-page";
 import Exercises from "./Exercise-page";
 import Example_function8 from "./Coaches-page";
+import Scheduler from "./calendar";
 
 const Nav = () => {
   const [open, setOpen] = useState(true);
@@ -18,13 +18,13 @@ const Nav = () => {
     {title: "Nutrition", src: "user1", path: (`/Nutrition`), gap:true},
     {title: "Registration", src: "calendar2", path: (`/Registration`)},
     {title: "Login", src: "search", path: (`/Login-page`)},
-    {title: "Single-Workout", src: "analytics", path: (`/Single-Workouts-page`)},
+    {title: "Schedule", src: "analytics", path: (`/Scheduler`)},
     {title: "Exercise", src: "folder1", path: (`/Exercise-page`), gap : true},
     {title: "Workouts", src: "setting", path: (`/Workouts-page`)},
   ];
 //STYLING below
   return (
-    <div className=" flex">
+    <div className=" flex bg-slate-800">
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "
@@ -79,7 +79,7 @@ const Nav = () => {
         <Route path="/Nutrition"element={<Example_function4/>} />
         <Route path="/Registration"element={<Example_function3/>} />
         <Route path="/Login-page"element={<Example_function5/>} />
-        <Route path="/Single-Workouts-page"element={<Example_function2/>} />
+        <Route path="/Scheduler"element={<Scheduler/>} />
         <Route path="/Workouts-page"element={<Example_function/>} />
         <Route path="/Exercise-page"element={<Exercises/>} />
       </Routes> 
