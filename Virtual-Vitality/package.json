@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "seed": "npx prisma migrate reset && node seed.cjs",
+    "seed": "npx prisma migrate reset --force && node seed.cjs",
     "dev": "nodemon -w src/Server src/Server/main.cjs",
     "start:dev": "vite",
     "build": "vite build",
