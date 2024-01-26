@@ -13,14 +13,14 @@ import Scheduler from "./calendar";
 const Nav = () => {
   const [open, setOpen] = useState(true);
   const Menus = [//This is images and titles
-    {title: "Dashboard", src: "home1", path: (`/`)},
-    {title: "Coaches", src: "messages2", path: (`/coaches`)},
-    {title: "Nutrition", src: "user1", path: (`/Nutrition`), gap:true},
-    {title: "Registration", src: "calendar2", path: (`/Registration`)},
-    {title: "Login", src: "search", path: (`/Login-page`)},
-    {title: "Schedule", src: "analytics", path: (`/Scheduler`)},
-    {title: "Exercise", src: "folder1", path: (`/Exercise-page`), gap : true},
-    {title: "Workouts", src: "setting", path: (`/Workouts-page`)},
+    {title: "Home", src: "icons8-home-48", path: (`/`)},
+    {title: "Coaches", src: "icons8-coach-48 (1)", path: (`/coaches`)},
+    {title: "Nutrition", src: "icons8-salad-48", path: (`/Nutrition`), gap:true},
+    {title: "Registration", src: "icons8-register-48 (1)", path: (`/Registration`)},
+    {title: "Login", src: "icons8-log-in-50", path: (`/Login-page`)},
+    {title: "Schedule", src: "calendar2", path: (`/Scheduler`)},
+    {title: "Exercise", src: "icons8-exercise-48", path: (`/Exercise-page`), gap : true},
+    {title: "Workouts", src: "icons8-protein-supplement-48", path: (`/Workouts-page`)},
   ];
 //STYLING below
   return (
@@ -31,7 +31,7 @@ const Nav = () => {
         } bg-slate-500 h-screen p-3  pt-8 relative duration-300`}
       >
         <img
-          src="./src/Assets/mastercontrol.png"
+          src="/assets/mastercontrol.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
@@ -71,7 +71,7 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex p-10">
+      <div className="h-screen w-screen flex p-3">
        
        <Routes>
         <Route path="/"element={<Example_function6/>} />

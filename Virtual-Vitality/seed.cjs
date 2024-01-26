@@ -13,7 +13,6 @@ async function seed () {
             email: "peng@yahoo.com",
             userName: "peng123",
             password : hashedUser1,
-            isCoach : false,
         },
     });
 
@@ -24,7 +23,6 @@ async function seed () {
             email: "seb@gmail.com",
             userName: "top coach 123",
             password : hashedUser2,
-            isCoach : true,
         },
     });
 
@@ -35,7 +33,6 @@ async function seed () {
             email: "jaylen@yahoo.com",
             userName: "Jay3",
             password : hashedUser3,
-            isCoach : false,
         },
     });
 
@@ -46,7 +43,6 @@ async function seed () {
             email: "chris@aol.com",
             userName: "Chris45",
             password : hashedUser4,
-            isCoach : false,
         },
     });
 
@@ -57,7 +53,16 @@ async function seed () {
             email: "jamari@yahoo.com",
             userName: "Jamari334",
             password : hashedUser5,
-            isCoach : true,
+        },
+    });
+
+    const hashedUser6 = await bcrypt.hash("password", saltrounds);
+    const user6 = await prisma.user.create({
+        data: {
+            name: "Carter",
+            email: "carter@yahoo.com",
+            userName: "Carter222",
+            password : hashedUser6,
         },
     });
     
@@ -95,7 +100,6 @@ async function seed () {
             name: "Jamari",
             isNutritionist: false,
             imgURL: "add image here",
-            userId: 5,
             workoutTypes: { connect: [workoutType1]} ,
         },
      });
@@ -106,8 +110,16 @@ async function seed () {
             name: "Seb",
             isNutritionist: false,
             imgURL: "add image here",
-            userId: 2,
             workoutTypes: { connect: [workoutType2]} ,
+        },
+     });
+
+     const coach3 = await prisma.coach.create({
+        data: {
+            name: "Carter",
+            isNutritionist: true,
+            imgURL: "add image here",
+            workoutTypes: { connect: [workoutType1]} ,
         },
      });
 
