@@ -13,7 +13,7 @@ const LoginForm  = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
 try {
-     const result = await axios.post(`http://localhost:4200/auth/login`,{
+     const result = await axios.post(`/auth/login`,{
         "userName":userNameLoginInput,
         "password":passwordLoginInput
       });
