@@ -29,7 +29,7 @@ const Example_function3 = () => {
     }
   };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className=" bg-slate-500 rounded-md p-2">
       <Row>
         <Col>
           <Form.Control

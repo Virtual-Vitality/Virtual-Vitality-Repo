@@ -29,7 +29,8 @@ try {
 
     return(
 
-      <Form onSubmit={handleSubmit}>
+      <div className=''>
+      <Form onSubmit={handleSubmit} className=' bg-slate-500 rounded-md p-2'>
       <Form.Group className="mb-3" controlId="formGroupUserName">
         <Form.Label>UserName</Form.Label>
         <Form.Control 
@@ -52,7 +53,7 @@ try {
       </Form.Group>
       <Button type= "submit">Log In</Button>
     </Form>
-
+    </div>
 )};
 
 export default LoginForm;

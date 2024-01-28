@@ -6,7 +6,8 @@ const example_function8= () =>{
       className="modal show"
       style={{ display: 'block', position: 'initial' }}
     >
-      <Modal.Dialog>
+      <Modal.Dialog
+      className=' bg-slate-500 rounded-md p-2'>
         <Modal.Header closeButton>
           <Modal.Title>Coach Name</Modal.Title>
         </Modal.Header>
