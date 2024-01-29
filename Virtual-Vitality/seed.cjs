@@ -13,7 +13,7 @@ async function seed () {
             email: "peng@yahoo.com",
             userName: "peng123",
             password : hashedUser1,
-            isCoach : false,
+           
         },
     });
 
@@ -24,7 +24,7 @@ async function seed () {
             email: "seb@gmail.com",
             userName: "top coach 123",
             password : hashedUser2,
-            isCoach : true,
+           
         },
     });
 
@@ -35,7 +35,7 @@ async function seed () {
             email: "jaylen@yahoo.com",
             userName: "Jay3",
             password : hashedUser3,
-            isCoach : false,
+           
         },
     });
 
@@ -46,7 +46,7 @@ async function seed () {
             email: "chris@aol.com",
             userName: "Chris45",
             password : hashedUser4,
-            isCoach : false,
+           
         },
     });
 
@@ -57,7 +57,7 @@ async function seed () {
             email: "jamari@yahoo.com",
             userName: "Jamari334",
             password : hashedUser5,
-            isCoach : true,
+          
         },
     });
 
@@ -68,7 +68,7 @@ async function seed () {
             email: "carter@yahoo.com",
             userName: "Carter222",
             password : hashedUser6,
-            isCoach : true,
+          
         },
     });
     
@@ -177,7 +177,6 @@ async function seed () {
             name: "Jamari",
             isNutritionist: false,
             imgURL: "add image here",
-            userId: 5,
             workoutTypes: { connect: [workoutType1]} ,
         },
      });
@@ -188,7 +187,6 @@ async function seed () {
             name: "Seb",
             isNutritionist: false,
             imgURL: "add image here",
-            userId: 2,
             workoutTypes: { connect: [workoutType2]} ,
         },
      });
@@ -198,7 +196,6 @@ async function seed () {
             name: "Carter",
             isNutritionist: true,
             imgURL: "add image here",
-            userId: 6,
             workoutTypes: { connect: [workoutType1]} ,
         },
      });
