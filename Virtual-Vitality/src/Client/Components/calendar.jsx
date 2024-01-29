@@ -8,10 +8,11 @@ const Scheduler = () => {
     const [selectedDate, setselectedDate] = useState(null)
     return (
       <>
-      <div className= " w-screen h-screen flex items-center justify-center"> 
+      <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-2"> 
       <label className=" bg-black text-cyan-50">
         <p>This is the calendar</p>
       <DatePicker 
+       className="bg-slate-500 rounded-md p-2"
       selected ={selectedDate} 
       onChange={date => setselectedDate(date)}
       dateFormat = "MM/dd/yyyy"

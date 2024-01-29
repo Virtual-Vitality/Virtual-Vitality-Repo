@@ -71,8 +71,8 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen w-screen flex p-3">
-       
+      <div className=" text-center justify-center w-screen h-screen flex p-3">
+      
        <Routes>
         <Route path="/"element={<Example_function6/>} />
         <Route path="/coaches"element={<Example_function8/>} />

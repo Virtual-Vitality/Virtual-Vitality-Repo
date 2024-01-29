@@ -2,7 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 const Example_function= () =>{
 return(
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }}
+        className=' bg-slate-500 rounded-md p-2'>
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
