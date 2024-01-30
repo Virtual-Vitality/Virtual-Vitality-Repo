@@ -54,35 +54,36 @@ model Payment {
   expiration     String @db.VarChar(5)
   cvv            Int
   zipCode        Int
-  User           User   @relation(fields: [userId], references: [id])
+  user           User   @relation(fields: [userId], references: [id])
   userId         Int    @unique
 }
 
-model Excercise {
+model Exercise {
   id                   Int                    @id @default(autoincrement())
   name                 String
   muscleGroup          String
   description          String
   imgUrl               String
   videoLink            String
-  ExcercisesOnWorkouts ExcercisesOnWorkouts[]
+  exercisesOnWorkouts ExercisesOnWorkouts[]
 }
 
 model Workout {
   id                   Int                    @id @default(autoincrement())
   name                 String
   description          String
-  ExcercisesOnWorkouts ExcercisesOnWorkouts[]
-  WorkoutType          WorkoutType            @relation(fields: [workoutTypeId], references: [id])
+  exercisesOnWorkouts ExercisesOnWorkouts[]
+  workoutType          WorkoutType            @relation(fields: [workoutTypeId], references: [id])
   workoutTypeId        Int
+  difficulty           String?
 }
 
-model ExcercisesOnWorkouts {
+model ExercisesOnWorkouts {
   id            Int       @id @default(autoincrement())
-  excerciseId   Int
+  exerciseId   Int
   workoutId     Int
-  exercise      Excercise @relation(fields: [excerciseId], references: [id])
+  exercise      Exercise @relation(fields: [exerciseId], references: [id])
   workout       Workout   @relation(fields: [workoutId], references: [id])
-  excerciseReps Int
-  excerciseSets Int
+  exerciseReps Int
+  exerciseSets Int
 }

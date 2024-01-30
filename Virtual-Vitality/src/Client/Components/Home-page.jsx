@@ -9,8 +9,8 @@ const Example_function6 = () => {
     return (
         <Container className="max-w-100">
             <div>
-            <Container className=" flex">
-                <Carousel fade className=" border-orange-400 flex" >
+            <Container className="">
+                <Carousel fade className=" border-orange-400" >
                     <Carousel.Item height={420} width={900} className='p - 0'>
                         <img
                             width={900} height={420}
