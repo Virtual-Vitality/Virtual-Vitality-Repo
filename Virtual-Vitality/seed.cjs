@@ -248,6 +248,16 @@ async function seed () {
         }
      });
 
+      await prisma.excercisesOnWorkouts.create({
+        data: {
+            excerciseId: (2,1),
+            workoutId: 1,
+            excerciseReps: 42,
+            excerciseSets: 65,
+
+        }
+     });
+
      const excerciseToWorkout2 = await prisma.excercisesOnWorkouts.create({
         data: {
             excerciseId: (2,1),
