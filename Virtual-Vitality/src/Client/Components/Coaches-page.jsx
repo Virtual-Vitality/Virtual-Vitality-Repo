@@ -1,50 +1,50 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import React,{useState} from 'react';
+import { Card } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const example_function8= () =>{
-    //create endpoint get call
-    //add handleSubmit
-    //use useState to track inputs and save them to variables to input
-    //into get request
-    const [nameOutput, setnameOutput] =useState(``);
-    const [imgOutput, setimgOutput] =useState(``)
-    
-  const handleSubmit = async(event) =>{
-    event.preventDefault();
-    try{
-      const result = await axios.get("/api/coaches")
-    }catch(error){
-      console.log(error)
+const Coaches = () => {
+  //create endpoint get call
+  //add handleSubmit
+  //use useState to track inputs and save them to variables to input
+  //into get request
+
+
+  const [coaches, setCoaches] = useState([]);
+
+
+  useEffect(() => {
+    async function getCoaches() {
+      try {
+        const { data: foundCoaches } = await axios.get("/api/coaches");
+        console.log(foundCoaches)
+        setCoaches(foundCoaches);
+      } catch (error) {
+        console.error(error);
+      }
     }
-    console.log(result)
-  } 
-handleSubmit();
+    getCoaches();
+  }, []);
 
-    return(
-    <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-      <Modal.Dialog
-      className=' bg-slate-500 rounded-md p-2'>
-        <Modal.Header closeButton>
-          <Modal.Title>Coach Name</Modal.Title>
-        </Modal.Header>
+  return (
+    <div>
+     
+     <div className="grid grid-cols-3 gap-4">
+          {coaches.map((coach) => (
+            <Card className=' relative' style={{ width: '18rem'}} key={coach.id}>
+              <Card.Img width="100%" height="150" variant="top" src={coach.imgUrl} alt='Coach Photo' />
+              <Card.Body >
+                <Card.Title>{coach.name}</Card.Title>
+                <Card.Title>{coach.w}</Card.Title>
+                <br/>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
+     
 
-        <Modal.Body>
-          <p>Coach Desc.</p>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save changes</Button>
-        </Modal.Footer>
-      </Modal.Dialog>
     </div>
-    )
+  )
 }
-export default example_function8
+export default Coaches;
 
 
