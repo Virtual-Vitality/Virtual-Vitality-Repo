@@ -11,10 +11,10 @@ const example_function8= () =>{
     const [nameOutput, setnameOutput] =useState(``);
     const [imgOutput, setimgOutput] =useState(``)
     
-  const handleSubmit = async(event) =>{
-    event.preventDefault();
+  const handleSubmit = async() =>{
+  
     try{
-      const result = await axios.get("/api/coaches")
+      const result = await axios.get("../server/api/coaches")
     }catch(error){
       console.log(error)
     }

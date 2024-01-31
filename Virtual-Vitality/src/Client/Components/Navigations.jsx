@@ -24,7 +24,7 @@ const Nav = () => {
   ];
 //STYLING below
   return (
-    <div className=" flex bg-slate-800">
+    <div className=" sticky flex bg-slate-800">
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "

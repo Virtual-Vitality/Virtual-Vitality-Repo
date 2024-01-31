@@ -1,4 +1,5 @@
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
@@ -29,10 +30,14 @@ const Example_function3 = () => {
     }
   };
   return (
-    <Form onSubmit={handleSubmit} className=" bg-slate-500 rounded-md p-2">
+  
+    <Form onSubmit={handleSubmit} className=" bg-slate-500 rounded-md p-2 align-self-center">
+      <h1 className=" underline bg-slate-800 p-1 rounded-md text-cyan-50">Regsitration</h1>
+      <br />
       <Row>
         <Col>
           <Form.Control
+
             placeholder="Full Name"
             onChange={(event) => {
               setnameInput(event.target.value);
@@ -48,7 +53,7 @@ const Example_function3 = () => {
           />
         </Col>
       </Row>
-
+       <br/>
       <Row>
         <Col>
           <Form.Control
@@ -58,7 +63,7 @@ const Example_function3 = () => {
             }}
           />
         </Col>
-
+       
         <Col>
           <Form.Control
             placeholder="Password"
@@ -68,8 +73,10 @@ const Example_function3 = () => {
           />
         </Col>
       </Row>
+      <br/>
       <Button onClick={handleSubmit}>Submit</Button>
     </Form>
+   
   );
 };
 export default Example_function3;

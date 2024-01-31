@@ -1,4 +1,4 @@
-
+import Container from "react-bootstrap/Container";
 import React,{ useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import axios from 'axios';
@@ -29,9 +29,11 @@ try {
 
     return(
 
-      <div className=''>
-      <Form onSubmit={handleSubmit} className=' bg-slate-500 rounded-md p-2'>
-      <Form.Group className="mb-3" controlId="formGroupUserName">
+      <div className='flex'>
+      <Form onSubmit={handleSubmit} className=' align-middle bg-slate-500 rounded-md p-2 align-self-center'>
+        <h1 className=" underline bg-slate-500">Login Form</h1>
+        <br/>
+      <Form.Group className="mb-3 align-self-center" controlId="formGroupUserName">
         <Form.Label>UserName</Form.Label>
         <Form.Control 
         type="str" 
