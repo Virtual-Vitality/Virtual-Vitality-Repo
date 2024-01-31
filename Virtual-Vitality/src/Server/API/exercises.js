@@ -4,7 +4,7 @@ const router = express.Router();
 
 // /api/exercises
 router.get("/", async (req, res) => {
-    const allExercises = await prisma.excercise.findMany();
+    const allExercises = await prisma.exercise.findMany();
     res.send(allExercises)
 })
 
