@@ -9,7 +9,11 @@ import Example_function6 from "./Home-page";
 import Exercises from "./Exercise-page";
 import Example_function8 from "./Coaches-page";
 import Scheduler from "./calendar";
+
+import Coaches from "./Coaches-page";
+
 import AccountSummary from "./AccountSummary";
+
 
 const Nav = () => {
   const [open, setOpen] = useState(true);
@@ -78,8 +82,12 @@ const Nav = () => {
       
        <Routes>
         <Route path="/"element={<Example_function6/>} />
+
+        <Route path="/coaches"element={<Coaches/>} />
+
         <Route path="/Account"element={<AccountSummary/>} />
         <Route path="/coaches"element={<Example_function8/>} />
+
         <Route path="/Nutrition"element={<Example_function4/>} />
         <Route path="/Registration"element={<Example_function3/>} />
         <Route path="/Login-page"element={<Example_function5/>} />
