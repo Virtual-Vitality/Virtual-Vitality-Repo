@@ -45,7 +45,7 @@ const Nav = () => {
         />
         <div className="flex gap-x-4 items-center fixed top-0">
           <img
-            src="./src/Assets/icons8-dumbbell-50.png"
+            src="/assets/icons8-dumbbell-50.png"
             className={`cursor-pointer duration-500 ${
               open && "rotate-[360deg]"
             }`}
@@ -68,7 +68,7 @@ const Nav = () => {
                 index === 0 && "bg-light-white"
               } `}
             >
-              <img src={`./src/Assets/${Menu.src}.png`} />
+              <img src={`/assets/${Menu.src}.png`} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>

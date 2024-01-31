@@ -9,6 +9,7 @@ const Exercises= () =>{
         async function getExercises() {
             try {
                 const { data: foundExercises } = await axios.get("/api/exercises");
+                console.log(foundExercises);
                 setExercises(foundExercises);
             } catch (error) {
                 console.error(error);
