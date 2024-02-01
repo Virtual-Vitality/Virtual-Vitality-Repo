@@ -34,7 +34,7 @@ const Coaches = () => {
               <Card.Img width="100%" height="150" variant="top" src={coach.imgUrl} alt='Coach Photo' />
               <Card.Body >
                 <Card.Title>{coach.name}</Card.Title>
-                <Card.Title>{coach.w}</Card.Title>
+                <Card.Title></Card.Title>
                 <br/>
               </Card.Body>
             </Card>
