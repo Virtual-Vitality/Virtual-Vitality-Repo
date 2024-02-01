@@ -21,7 +21,7 @@ function AccountSummary() {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(result)
+        console.log(result.id)
         setUser(result);
       } catch (error) {
         console.error(error.message);
