@@ -97,9 +97,9 @@ async function seed () {
    
      const coach1 = await prisma.coach.create({
         data: {
-            name: "Jamari",
-            isNutritionist: false,
-            imgURL: "add image here",
+            name: "Jennifer",
+            isNutritionist: true,
+            imgURL: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGhlYWRzaG90cyUyMG9mJTIwcGVvcGxlfGVufDB8fDB8fHww",
             workoutTypes: { connect: [workoutType1]} ,
         },
      });
@@ -109,7 +109,7 @@ async function seed () {
         data: {
             name: "Seb",
             isNutritionist: false,
-            imgURL: "add image here",
+            imgURL: "https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxwZW9wbGV8ZW58MHx8MHx8fDA%3D",
             workoutTypes: { connect: [workoutType2]} ,
         },
      });
@@ -117,11 +117,27 @@ async function seed () {
      const coach3 = await prisma.coach.create({
         data: {
             name: "Carter",
-            isNutritionist: true,
-            imgURL: "add image here",
-            workoutTypes: { connect: [workoutType1]} ,
+            isNutritionist: false,
+            imgURL: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHNob3RzJTIwb2YlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D",
+            workoutTypes: { connect: [workoutType4]} ,
         },
      });
+     const coach4 = await prisma.coach.create({
+        data:{
+            name: "Peter",
+            isNutritionist: false,
+            imgURL: "https://images.unsplash.com/photo-1504810370725-2585de12e6ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGhlYWRzaG90cyUyMG9mJTIwcGVvcGxlfGVufDB8fDB8fHww",
+            workoutTypes: {connect: [workoutType6]}
+        }
+     })
+     const coach5 =await prisma.coach.create({
+        data: {
+            name:"John",
+            isNutritionist: false,
+            imgURL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGVhZHNob3RzJTIwb2YlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D",
+            workoutTypes: {connect: [workoutType5]}
+        }
+     })
 
 
 

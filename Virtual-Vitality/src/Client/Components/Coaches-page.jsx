@@ -27,14 +27,15 @@ const Coaches = () => {
 
   return (
     <div>
+      <h1> MEET OUR COACHES</h1>
      
      <div className="grid grid-cols-3 gap-4">
           {coaches.map((coach) => (
-            <Card className=' relative' style={{ width: '18rem'}} key={coach.id}>
-              <Card.Img width="100%" height="150" variant="top" src={coach.imgUrl} alt='Coach Photo' />
+            <Card style={{ width: '18rem'}} key={coach.id}>
+              <Card.Img width="100%" height="150" variant="top" src={coach.imgURL} alt='Coach Photo' />
               <Card.Body >
                 <Card.Title>{coach.name}</Card.Title>
-                <Card.Title></Card.Title>
+                <Card.Text>{coach.workoutTypes} {console.log(coach)}</Card.Text>
                 <br/>
               </Card.Body>
             </Card>
