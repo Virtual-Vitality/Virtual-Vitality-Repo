@@ -12,9 +12,9 @@ app.use(morgan("dev"));
 app.use(express.json()); //it adds a 'body' property to request object
 app.use(express.urlencoded({ extended: true }));//use for handling form submissions
 app.use(cors());
-console.log("trying to run")
+
 app.use("/auth", require("./Auth/auth.js"));
-app.use("/api", require("./API"));
+app.use("/api", require("./API/index.js"));
 
 
 ViteExpress.listen(app, port,  () =>
