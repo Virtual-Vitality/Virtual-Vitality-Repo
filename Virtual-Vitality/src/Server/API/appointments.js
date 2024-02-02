@@ -25,6 +25,9 @@ module.exports = router;
 //api/appointments
 router.post("/", async (req, res) =>{
     const {date,coachId,userId} = req.body
+    console.log(date);
+    console.log(coachId);
+    console.log(userId);
     try {
         const allAppointments = await prisma.appointments.create({
             data: {
@@ -36,6 +39,8 @@ router.post("/", async (req, res) =>{
         res.send(allAppointments)
     } catch (error) {
         console.log(error)
+        res.send("Not working",500)
+    
     }
   
 })

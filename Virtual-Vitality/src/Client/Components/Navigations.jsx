@@ -10,10 +10,17 @@ import Exercises from "./Exercise-page";
 import Example_function8 from "./Coaches-page";
 import Scheduler from "./calendar";
 
+import Coaches from "./Coaches-page";
+
+import AccountSummary from "./AccountSummary";
+
+
 const Nav = () => {
   const [open, setOpen] = useState(true);
+ 
   const Menus = [//This is images and titles
     {title: "Home", src: "icons8-home-48", path: (`/`)},
+    {title: "Account", src: "icons8-account-48", path: (`/Account`)},
     {title: "Coaches", src: "icons8-coach-48 (1)", path: (`/coaches`)},
     {title: "Nutrition", src: "icons8-salad-48", path: (`/Nutrition`), gap:true},
     {title: "Registration", src: "icons8-register-48 (1)", path: (`/Registration`)},
@@ -24,21 +31,21 @@ const Nav = () => {
   ];
 //STYLING below
   return (
-    <div className=" flex bg-slate-800">
+    <div className=" flex bg-slate-800 h-screen">
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "
-        } bg-slate-500 h-screen p-3  pt-8 relative duration-300`}
+        } bg-slate-500 h-auto p-3  pt-8 relative duration-300`}
       >
         <img
           src="/assets/mastercontrol.png"
-          className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180"}`}
+          className={`fixed left-16 cursor-pointer -right-3 top-9 w-7 border-dark-purple
+           border-2 rounded-full  ${!open && "rotate-180 duration-300"} ${open && "fixed left-56 duration-300"}`}
           onClick={() => setOpen(!open)}
         />
-        <div className="flex gap-x-4 items-center">
+        <div className="flex gap-x-4 items-center fixed top-0">
           <img
-            src="./src/Assets/icons8-dumbbell-50.png"
+            src="/assets/icons8-dumbbell-50.png"
             className={`cursor-pointer duration-500 ${
               open && "rotate-[360deg]"
             }`}
@@ -51,7 +58,7 @@ const Nav = () => {
             Virtual Vitality
           </h1>
         </div>
-        <ul className="pt-6">
+        <ul className="pt-6 fixed left-2 top-16">
           {Menus.map((Menu, index) => (
             <Link to = {Menu.path}>
             <li
@@ -61,7 +68,7 @@ const Nav = () => {
                 index === 0 && "bg-light-white"
               } `}
             >
-              <img src={`./src/Assets/${Menu.src}.png`} />
+              <img src={`/assets/${Menu.src}.png`} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>
@@ -71,11 +78,16 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-      <div className=" text-center justify-center w-screen h-screen flex p-3">
+      <div className=" text-center justify-center w-screen h-full flex p-3">
       
        <Routes>
         <Route path="/"element={<Example_function6/>} />
+
+        <Route path="/coaches"element={<Coaches/>} />
+
+        <Route path="/Account"element={<AccountSummary/>} />
         <Route path="/coaches"element={<Example_function8/>} />
+
         <Route path="/Nutrition"element={<Example_function4/>} />
         <Route path="/Registration"element={<Example_function3/>} />
         <Route path="/Login-page"element={<Example_function5/>} />

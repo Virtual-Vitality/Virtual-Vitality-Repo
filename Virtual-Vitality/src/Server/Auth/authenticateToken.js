@@ -16,10 +16,11 @@ async function authenticateToken(req, res, next) {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verifies the token
+        console.log(decoded.id)
 
-        const user = await prisma.user.findFirst({
+        const user = await prisma.user.findUnique({
             where: {
-                id: decoded.user_id
+                id: decoded.id
             }
         });
 
@@ -30,7 +31,7 @@ async function authenticateToken(req, res, next) {
         req.user = user;
         next();
     } catch (error) {
-
+        console.log(error)
         return res.status(403).json({ message: 'Invalid token', error: error.message });
     }
 }

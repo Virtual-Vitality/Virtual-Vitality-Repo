@@ -18,6 +18,10 @@ usersRouter.get('/', async (req, res, next) => {
     }
 });
 
+// Get current user
+usersRouter.get('/me', authenticateToken, async (req, res, next) => {
+    res.send(req.user)
+})
 
 // Get user by ID
 // Accessible to everyone
