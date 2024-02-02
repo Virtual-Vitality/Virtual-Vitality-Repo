@@ -50,7 +50,7 @@ model WorkoutType {
 model Payment {
   id             Int    @id @default(autoincrement())
   cardHolderName String
-  cardNumber     Int    @unique
+  cardNumber     Int    @unique 
   expiration     String @db.VarChar(5)
   cvv            Int
   zipCode        Int
