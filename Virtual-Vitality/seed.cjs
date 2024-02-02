@@ -94,83 +94,12 @@ async function seed () {
         },
      });
 
-     const workoutType3 = await prisma.workoutType.create({
-        data: {
-            name: "Cardio",
-        }
-    });
-    
-
-    const workoutType4 = await prisma.workoutType.create({
-        data: {
-            name: "Heart Racer",
-        }
-    });
-
-    const workoutType5 = await prisma.workoutType.create({
-        data: {
-            name: "Stretching",
-        }
-    });
-
-    const workoutType6 = await prisma.workoutType.create({
-        data: {
-            name: "Balance Training",
-        }
-    });
-
-    const workoutType7 = await prisma.workoutType.create({
-        data: {
-            name: "Yoga",
-        }
-    });
-
-    const workOut3 = await prisma.workout.create({
-        data: {
-            name: "Iron Legs",
-            workoutTypeId: 3,
-            description: "greate for leg strength",
-        },
-     });
-
-     const workOut4 = await prisma.workout.create({
-        data: {
-            name: "Summer body",
-            workoutTypeId: 4,
-            description: "Summer never been finerrrr",
-        },
-     });
-
-     const workOut5 = await prisma.workout.create({
-        data: {
-            name: "Warm ups and cool Downs",
-            workoutTypeId: 5,
-            description: "Don't pull muscles, shred fat",
-        },
-     });
-
-     const workOut6 = await prisma.workout.create({
-        data: {
-            name: "Power Hour",
-            workoutTypeId: 6,
-            description: "test your strength",
-        },
-     });
-
-     const workOut7 = await prisma.workout.create({
-        data: {
-            name: "Sanity Session",
-            workoutTypeId: 7,
-            description: "relax your mind",
-        },
-     });
-
    
      const coach1 = await prisma.coach.create({
         data: {
-            name: "Jamari",
-            isNutritionist: false,
-            imgURL: "add image here",
+            name: "Jennifer",
+            isNutritionist: true,
+            imgURL: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGhlYWRzaG90cyUyMG9mJTIwcGVvcGxlfGVufDB8fDB8fHww",
             workoutTypes: { connect: [workoutType1]} ,
         },
      });
@@ -180,7 +109,7 @@ async function seed () {
         data: {
             name: "Seb",
             isNutritionist: false,
-            imgURL: "add image here",
+            imgURL: "https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxwZW9wbGV8ZW58MHx8MHx8fDA%3D",
             workoutTypes: { connect: [workoutType2]} ,
         },
      });
@@ -188,11 +117,27 @@ async function seed () {
      const coach3 = await prisma.coach.create({
         data: {
             name: "Carter",
-            isNutritionist: true,
-            imgURL: "add image here",
-            workoutTypes: { connect: [workoutType1]} ,
+            isNutritionist: false,
+            imgURL: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHNob3RzJTIwb2YlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D",
+            workoutTypes: { connect: [workoutType4]} ,
         },
      });
+     const coach4 = await prisma.coach.create({
+        data:{
+            name: "Peter",
+            isNutritionist: false,
+            imgURL: "https://images.unsplash.com/photo-1504810370725-2585de12e6ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGhlYWRzaG90cyUyMG9mJTIwcGVvcGxlfGVufDB8fDB8fHww",
+            workoutTypes: {connect: [workoutType6]}
+        }
+     })
+     const coach5 =await prisma.coach.create({
+        data: {
+            name:"John",
+            isNutritionist: false,
+            imgURL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGVhZHNob3RzJTIwb2YlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D",
+            workoutTypes: {connect: [workoutType5]}
+        }
+     })
 
 
 
@@ -309,9 +254,11 @@ async function seed () {
         }
      });
 
+     const excerciseToWorkout = await prisma.excercisesOnWorkouts.create
      
 
      const exerciseToWorkout = await prisma.exercisesOnWorkouts.create({
+
         data: {
             exerciseId: (1,3),
             workoutId: 1,
@@ -320,6 +267,24 @@ async function seed () {
 
         }
      });
+
+
+      await prisma.excercisesOnWorkouts.create({
+        data: {
+            excerciseId: (2,1),
+            workoutId: 1,
+            excerciseReps: 42,
+            excerciseSets: 65,
+
+        }
+     });
+
+     const excerciseToWorkout2 = await prisma.excercisesOnWorkouts.create({
+        data: {
+            excerciseId: (2,1),
+            workoutId: 2,
+            excerciseReps: 5,
+            excerciseSets: 2,
 
      const exerciseToWorkout2 = await prisma.exercisesOnWorkouts.create({
         data: {
@@ -357,6 +322,7 @@ async function seed () {
             workoutId: 5,
             exerciseReps: 5,
             exerciseSets: 2,
+
 
         }
      });
