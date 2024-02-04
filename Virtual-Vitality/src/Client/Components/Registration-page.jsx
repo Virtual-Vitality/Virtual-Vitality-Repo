@@ -81,13 +81,16 @@ const Example_function3 = () => {
 
   //Visual Components of page start Here
   return (
-    <>
+    <div className='flex items-center justify-center p-5'>
     {/* Reg Form Visual */}
     <Form onSubmit={()=>{
        RegistrationSubmit();
        handleShow();
-    }} className=" bg-slate-500 rounded-md p-2">
+    }} className=" bg-slate-500 rounded-md p-5">
+      <h1>Registration Form</h1>
+      <br/>
       <Row>
+      
         <Col>
           <Form.Control
             placeholder="Full Name"
@@ -96,6 +99,7 @@ const Example_function3 = () => {
             }}
           />
         </Col>
+        
         <Col>
           <Form.Control
             placeholder="Username"
@@ -105,7 +109,7 @@ const Example_function3 = () => {
           />
         </Col>
       </Row>
-
+      <br/>
       <Row>
         <Col>
           <Form.Control
@@ -115,7 +119,7 @@ const Example_function3 = () => {
             }}
           />
         </Col>
-
+       
         <Col>
           <Form.Control
             placeholder="Password"
@@ -125,6 +129,7 @@ const Example_function3 = () => {
           />
         </Col>
       </Row>
+      <br/>
       <Button 
 
       onClick={(event)=>{
@@ -176,12 +181,12 @@ const Example_function3 = () => {
           </Modal.Body>
           <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Confirm Payment
           </Button>
-          <Button variant="primary">Understood</Button>
+          {/* <Button variant="primary">Understood</Button> */}
         </Modal.Footer>
       </Modal>
-    </>
+      </div>
   );
 };
 export default Example_function3;

@@ -1,6 +1,7 @@
 import Accordion from "react-bootstrap/Accordion";
 const Example_function4 = () => {
   return (
+    <div className="flex items-center justify-center ">
     <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>Importance of Vegetables</Accordion.Header>
@@ -56,6 +57,7 @@ const Example_function4 = () => {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    </div>
   );
 };
 
