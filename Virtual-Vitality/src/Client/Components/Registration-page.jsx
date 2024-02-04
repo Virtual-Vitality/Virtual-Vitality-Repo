@@ -86,7 +86,7 @@ const Example_function3 = () => {
     <Form onSubmit={()=>{
        RegistrationSubmit();
        handleShow();
-    }} className=" bg-slate-500 rounded-md p-5">
+    }} className=" bg-slate-500 rounded-md p-5 border-zinc-950 border-3">
       <h1>Registration Form</h1>
       <br/>
       <Row>

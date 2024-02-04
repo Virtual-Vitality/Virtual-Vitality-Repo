@@ -24,7 +24,7 @@ const Exercises= () =>{
         <div >
         <div className="grid grid-cols-3 gap-4">
           {exercises.map((exercise) => (
-            <Card className=' relative' style={{ width: '18rem'}} key={exercise.id}>
+            <Card className=' relative border-zinc-950 border-3' style={{ width: '18rem'}} key={exercise.id}>
               <Card.Img width="100%" height="150" variant="top" src={exercise.imgUrl} alt='Exercise Photo' />
               <Card.Body >
                 <Card.Title>{exercise.name}</Card.Title>

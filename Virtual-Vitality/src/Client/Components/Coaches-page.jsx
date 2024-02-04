@@ -31,7 +31,8 @@ const Coaches = () => {
      
      <div className="grid grid-cols-3 gap-4">
           {coaches.map((coach) => (
-            <Card style={{ width: '18rem'}} key={coach.id}>
+            <Card style={{ width: '18rem'}} key={coach.id}
+            className='border-zinc-950 border-3'>
               <Card.Img width="100%" height="150" variant="top" src={coach.imgURL} alt='Coach Photo' />
               <Card.Body >
                 <Card.Title>{coach.name}</Card.Title>
