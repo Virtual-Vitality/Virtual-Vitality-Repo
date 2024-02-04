@@ -15,7 +15,7 @@ const Coaches = () => {
   useEffect(() => {
     async function getCoaches() {
       try {
-        const { data: foundCoaches } = await axios.get("/api/coaches");
+        const { data: foundCoaches } = await axios.get("/api/coaches")
         console.log(foundCoaches)
         setCoaches(foundCoaches);
       } catch (error) {
