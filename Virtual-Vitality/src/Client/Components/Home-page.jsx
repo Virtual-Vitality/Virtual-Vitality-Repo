@@ -57,7 +57,7 @@ const Example_function6 = () => {
                     <Card.Body>
                         <Card.Title>READY, SET, FLEX</Card.Title>
                         <Card.Text>
-                            On February 9, Coach Seb will be hosting a yoga stretch session to relax the body and mind. Click here to learn more.
+                            On February 29, 2024 Coach Seb will be hosting a yoga session to relax the body and mind @5pm. 
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -65,29 +65,29 @@ const Example_function6 = () => {
                 <Card className='relative' style={{ width: '18rem', height: '21rem'}}>
                     <Card.Img variant="top" src="https://images.unsplash.com/photo-1517438322307-e67111335449?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHN3ZWF0fGVufDB8fDB8fHww" />
                     <Card.Body>
-                        <Card.Title>lemme see them hands</Card.Title>
+                        <Card.Title>Lemme see them hands</Card.Title>
                         <Card.Text>
-                            Lets sweat those calories off with boxing
+                            Join us on @3:30 pm March 21, 2024,  to sweat those calories off with light boxing techniques, shawdow boxing and breathing skills.
                         </Card.Text>
                     </Card.Body>
                 </Card>
 
                 <Card className='relative' style={{ width: '18rem', height: '21rem' }}>
-                    <Card.Img variant="top" src="" />
+                    <Card.Img variant="top" src="https://plus.unsplash.com/premium_photo-1664302148512-ddea30cd2a92?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGhlYWx0aHl8ZW58MHx8MHx8fDA%3D" />
                     <Card.Body>
-                        <Card.Title>lemme see them hands</Card.Title>
+                        <Card.Title>Nutritional </Card.Title>
                         <Card.Text>
-                            Lets sweat those calories off with boxing
+                            Every Sunday @3pm est, our Nutritionist Jennifer speaks on topics to make dieting and eating healthier a breeze!!
                         </Card.Text>
                     </Card.Body>
                 </Card>
 
                 <Card className='relative' style={{ width: '18rem', height: '21rem' }}>
-                    <Card.Img variant="top" src="" />
+                    <Card.Img variant="top" src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGV4ZXJjaXNlfGVufDB8fDB8fHww" />
                     <Card.Body>
-                        <Card.Title>lemme see them hands</Card.Title>
+                        <Card.Title>Aerobics</Card.Title>
                         <Card.Text>
-                            Lets sweat those calories off with boxing
+                           We are going to get our heart pumping with some cardio Aerobics on April 4, 2024 @ 7pm.
                         </Card.Text>
                     </Card.Body>
                 </Card>
