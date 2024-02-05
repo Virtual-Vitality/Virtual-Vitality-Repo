@@ -12,6 +12,7 @@ function AccountSummary() {
 
   const [user, setUser] = useState("");
   const [token, setToken] = useState(window.localStorage.getItem("token"));
+  const [appointments, setAppointments] = useState("")
 
   useEffect(() => {
     const getUser = async () => {
@@ -21,8 +22,9 @@ function AccountSummary() {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(result.id)
         setUser(result);
+        const {data: response} = await axios.get(`/api/users/${result.id}`);
+        setAppointments(response.appointments)
       } catch (error) {
         console.error(error.message);
       }
@@ -38,17 +40,22 @@ function AccountSummary() {
 
   return (
     <div className="flex items-center justify-center">
-      <label className=" bg-slate-700 p-4">
+      <label className=" bg-slate-400 p-4">
     <ListGroup>
       <ListGroup.Item>Name: {user.name}</ListGroup.Item>
       <br/>
       <ListGroup.Item>Username: {user.userName}</ListGroup.Item>
       <br/>
       <ListGroup.Item>Email: {user.email}</ListGroup.Item>
-      <br/>
-      <ListGroup.Item>Appointments: {user.appointments}</ListGroup.Item>
-      <br/>
-      <br/>
+      <ListGroup>
+        Appointments:
+        {appointments.length > 0 && appointments.map((appointment) => {
+          const date = appointment.date.slice(0,10);
+          const split = date.split("-");
+          const final = `${split[1]}-${split[2]}-${split[0]}`;      
+          return <ListGroup.Item key={appointment.id}>Date: {final} Coach: {appointment.coach.name}</ListGroup.Item>
+        })}
+      </ListGroup>
       <Button variant="danger" onClick={logOutHandler}>
         Logout
       </Button>{" "}

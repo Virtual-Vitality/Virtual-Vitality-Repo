@@ -31,7 +31,7 @@ const Nav = () => {
   ];
 //STYLING below
   return (
-    <div className=" flex bg-slate-800 h-screen">
+    <div className=" flex bg-slate-800 min-h-screen">
       <div
         className={` ${
           open ? " h-auto w-72 " : "w-20 "
@@ -40,7 +40,7 @@ const Nav = () => {
         <img
           src="/assets/mastercontrol.png"
           className={`fixed left-16 cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180 duration-300"} ${open && "fixed left-56 duration-300"}`}
+           border-2 rounded-full  ${!open && "rotate-180 duration-300"} ${open && "fixed duration-300"}`}
           onClick={() => setOpen(!open)}
         />
         <div className="flex gap-x-4 items-center fixed top-0">

@@ -28,7 +28,6 @@ const workoutPage = () => {
     async function getWorkout() {
       try {
         const { data: results } = await axios.get("/api/workouts");
-        console.log(results);
         setWorkouts(results);
       } catch (error) {
         console.error(error);
@@ -41,7 +40,7 @@ const workoutPage = () => {
     console.log(page);
     setCurrentPage(page);
   };
-
+  
 
   const generateRandomColor = () => {
     // Generate a random hex color
@@ -80,7 +79,6 @@ const workoutPage = () => {
       </ButtonGroup>
       <div className="grid grid-cols-3 gap-4">
         {filteredWorkouts.slice(startIndex, endIndex).map((workout, workoutIndex) => {
-          console.log(workout)
           return(
           <Card className='relative' style={{ maxWidth: '12rem', height: '480px', margin: '0 auto', marginBottom: '15px', marginTop: '15px' }} key={workout.id}>
             <Card.Body style={{ fontSize: '0.9rem' }}>
@@ -93,7 +91,7 @@ const workoutPage = () => {
                     <Card.Text> exerciseName: {exerciseOnWorkout.exercise.name}</Card.Text>
                     <Card.Text> exerciseReps: {exerciseOnWorkout.exerciseReps}</Card.Text>
                     <Card.Text> exerciseSets: {exerciseOnWorkout.exerciseSets}</Card.Text>
-                    <Button variant="outline-secondary" size="sm" style={{ fontSize: "0.7rem", color: "black" }} onClick={() => handleDetailButtonClick(index)}>
+                    <Button variant="outline-secondary" size="sm" style={{fontSize:"0.7rem", color:"black" }} onClick={() => handleDetailButtonClick(index)}>
                       Details
                     </Button>
                   </div>
@@ -105,7 +103,7 @@ const workoutPage = () => {
         )})}
       </div>
       {selectedExerciseIndex !== null && (
-        <ExerciseDetails exerciseOnWorkout={filteredWorkouts[startIndex + selectedExerciseIndex]?.exercisesOnWorkouts[selectedExerciseIndex]} />
+        <ExerciseDetails exerciseOnWorkout={filteredWorkouts[startIndex + selectedExerciseIndex]?.exercisesOnWorkouts[selectedExerciseIndex]?.exercise} />
       )}
 
       {totalPages > 1 && (
@@ -120,4 +118,4 @@ const workoutPage = () => {
     </div>
   );
 };
-export default workoutPage;
+export default workoutPage
