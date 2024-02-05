@@ -70,8 +70,9 @@ const Scheduler = () => {
     return (
       <div className="flex items-center justify-center">
         <form>
-        <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-5 flex-col "> 
+        <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-5 flex-col border-zinc-950 border-3 "> 
         <label className=" bg-black text-cyan-50">
+          <h1>Scheduling Page</h1>
         
         <DatePicker 
          className="bg-slate-500 rounded-md p-2"

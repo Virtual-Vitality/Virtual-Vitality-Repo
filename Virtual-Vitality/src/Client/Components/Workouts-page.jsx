@@ -52,15 +52,15 @@ const workoutPage = () => {
     // //   color += letters[Math.floor(Math.random() * 16)];
     // // }
     // return color;
-    const minLightness = 70; 
-    const maxLightness = 90; 
-  
+    const minLightness = 70;
+    const maxLightness = 90;
+
     const getRandomValue = (min, max) => Math.floor(Math.random() * (max - min) + min);
-  
+
     const hue = getRandomValue(0, 360); // Random hue
     const saturation = getRandomValue(40, 60); // Adjust saturation for a more colorful look
     const lightness = getRandomValue(minLightness, maxLightness); // Random lightness
-  
+
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
