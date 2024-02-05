@@ -73,11 +73,11 @@ const Scheduler = () => {
     }
   
     return (
-      <div>
+      <div className="flex items-center justify-center">
         <form>
-        <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-2"> 
+        <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-5 flex-col "> 
         <label className=" bg-black text-cyan-50">
-        <p>This is the calendar</p>
+        
         <DatePicker 
          className="bg-slate-500 rounded-md p-2"
         selected ={selectedDate} 
@@ -88,13 +88,14 @@ const Scheduler = () => {
         isClearable
        />
         </label>
+        
         <DropdownButton id="dropdown-basic-button" title={selectedCoach? selectedCoach.name : "Pick your coach"}>
           {coaches.map((coach)=>{ 
             {console.log(coach)}
             return(<Dropdown.Item onClick= {()=>dropdownHandleCoach(coach)} >{coach.name}</Dropdown.Item>)
-
            })}
         </DropdownButton>
+
         <button 
       onClick={makeApt}
         className=" rounded-md  bg-black text-cyan-50 p-2">Make Appointment</button>

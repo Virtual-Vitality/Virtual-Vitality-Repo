@@ -77,6 +77,7 @@ async function seed () {
            name: "Build Muscle",
            workoutTypeId: 1,
            description: "great for the core",
+           difficulty: "Beginner"
        },
     });
 
@@ -91,6 +92,7 @@ async function seed () {
             name: "Weight Lost",
             workoutTypeId: 2,
             description: "great for intense workouts",
+            difficulty: "Beginner"
         },
      });
 
@@ -105,6 +107,7 @@ async function seed () {
            name: "Get a faster sprint",
            workoutTypeId: 3,
            description: "great for the calves",
+           difficulty: "Intermediate"
        },
     });
 
@@ -119,6 +122,7 @@ async function seed () {
            name: "Build fighting ability",
            workoutTypeId: 4,
            description: "great for the core",
+           difficulty: "Intermediate"
        },
     });
 
@@ -133,6 +137,7 @@ async function seed () {
            name: "Build Flexible Muscle",
            workoutTypeId: 5,
            description: "great for the back",
+           difficulty: "Advanced"
        },
     });
 
