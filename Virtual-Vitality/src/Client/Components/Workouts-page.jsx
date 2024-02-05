@@ -39,9 +39,9 @@ const workoutPage = () => {
   const handlePageChange = (page) => {
     console.log('Hello')
     console.log(page);
-    setCurrentPage(page); 
+    setCurrentPage(page);
   };
-  
+
 
   const generateRandomColor = () => {
     // Generate a random hex color
@@ -55,15 +55,15 @@ const workoutPage = () => {
     // //   color += letters[Math.floor(Math.random() * 16)];
     // // }
     // return color;
-    const minLightness = 70; 
-    const maxLightness = 90; 
-  
+    const minLightness = 70;
+    const maxLightness = 90;
+
     const getRandomValue = (min, max) => Math.floor(Math.random() * (max - min) + min);
-  
+
     const hue = getRandomValue(0, 360); // Random hue
     const saturation = getRandomValue(40, 60); // Adjust saturation for a more colorful look
     const lightness = getRandomValue(minLightness, maxLightness); // Random lightness
-  
+
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
@@ -83,8 +83,8 @@ const workoutPage = () => {
           console.log(workout)
           return(
           <Card className='relative' style={{ maxWidth: '12rem', height: '480px', margin: '0 auto', marginBottom: '15px', marginTop: '15px' }} key={workout.id}>
-            <Card.Body style={{fontSize: '0.9rem'}}>
-              <Card.Title style={{ borderBottom: '2px solid #ccc', background: '#f0f0f0', fontSize: '1.1rem'}}>
+            <Card.Body style={{ fontSize: '0.9rem' }}>
+              <Card.Title style={{ borderBottom: '2px solid #ccc', background: '#f0f0f0', fontSize: '1.1rem' }}>
                 {workout.workoutType.name}
               </Card.Title>
               <div style={{ borderTop: '2px solid #ccc', background: '#e0e0e0', padding: '8px' }}>
@@ -93,7 +93,7 @@ const workoutPage = () => {
                     <Card.Text> exerciseName: {exerciseOnWorkout.exercise.name}</Card.Text>
                     <Card.Text> exerciseReps: {exerciseOnWorkout.exerciseReps}</Card.Text>
                     <Card.Text> exerciseSets: {exerciseOnWorkout.exerciseSets}</Card.Text>
-                    <Button variant="outline-secondary" size="sm" style={{fontSize:"0.7rem", color:"black" }} onClick={() => handleDetailButtonClick(index)}>
+                    <Button variant="outline-secondary" size="sm" style={{ fontSize: "0.7rem", color: "black" }} onClick={() => handleDetailButtonClick(index)}>
                       Details
                     </Button>
                   </div>
@@ -105,7 +105,7 @@ const workoutPage = () => {
         )})}
       </div>
       {selectedExerciseIndex !== null && (
-        <ExerciseDetails exerciseOnWorkout={filteredWorkouts[startIndex + selectedExerciseIndex]?.exercisesOnWorkouts[selectedExerciseIndex]?.exercise} />
+        <ExerciseDetails exerciseOnWorkout={filteredWorkouts[startIndex + selectedExerciseIndex]?.exercisesOnWorkouts[selectedExerciseIndex]} />
       )}
 
       {totalPages > 1 && (
@@ -120,4 +120,4 @@ const workoutPage = () => {
     </div>
   );
 };
-export default workoutPage
+export default workoutPage;
