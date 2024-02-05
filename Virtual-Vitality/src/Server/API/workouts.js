@@ -1,63 +1,22 @@
-const express = require('express');
-const { PrismaClient } = require('@prisma/client');
-const workoutsRouter = express.Router();
-const prisma = new PrismaClient();
+const express = require("express")
+const prisma = require("../client.cjs")
+const router = express.Router();
 
+// /api/workouts
+router.get("/", async (req, res) => {
 
-workoutsRouter.get('/', async (req, res, next) => {
-    try {
-        // Use Prisma to retrieve all workout
-        const allWorkouts = await prisma.workout.findMany({
-            include: {
-                workoutType: true,
-                exercisesOnWorkouts: {
-                    include: {
-                        exercise: true
-                    }
+    const allWorkouts = await prisma.workout.findMany({
+        include: {
+            workoutType: true ,
+            exercisesOnWorkouts:{
+                include: {
+                    exercise: true
                 }
             }
-        })
-        res.send(allWorkouts);
-        // Send the array of workouts as a response
-    } catch (error) {
-        console.error(error.message);
-        next(error);
-    }
-});
+        }
+    });
+    res.send(allWorkouts)
+   
+})
 
-
-// Get workout by ID
-// Accessible to everyone
-// workoutsRouter.get('/:id', async (req, res, next) => {
-//     const workoutId = parseInt(req.params.id);
-//     try {
-//         const workout = await prisma.workout.findUnique({
-//             where: { id: workoutId 
-//             },
-//             include:{
-//                 workoutType:true,
-//                 excercisesOnWorkouts:{
-//                     include:{
-//                         excerciseReps: true,
-//                         excerciseSets: true,
-//                         excercise:{
-//                             include:{
-//                                 name:true,
-//                                 muscleGroup: true   
-//                             }
-//                         }
-//                 }
-//                 }
-//             }
-//         });
-//         res.send(workout);
-//     } catch (error) {
-//         console.error(error.message);
-//         next(error);
-//     }
-// });
-
-
-
-
-module.exports = workoutsRouter;
+module.exports = router;

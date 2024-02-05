@@ -37,15 +37,25 @@ function AccountSummary() {
   };
 
   return (
+    <div className="flex items-center justify-center">
+      <label className=" bg-slate-700 p-4">
     <ListGroup>
       <ListGroup.Item>Name: {user.name}</ListGroup.Item>
+      <br/>
       <ListGroup.Item>Username: {user.userName}</ListGroup.Item>
+      <br/>
       <ListGroup.Item>Email: {user.email}</ListGroup.Item>
+      <br/>
       <ListGroup.Item>Appointments: {user.appointments}</ListGroup.Item>
+      <br/>
+      <br/>
       <Button variant="danger" onClick={logOutHandler}>
         Logout
       </Button>{" "}
+      
     </ListGroup>
+    </label>
+    </div>
   );
 }
 
