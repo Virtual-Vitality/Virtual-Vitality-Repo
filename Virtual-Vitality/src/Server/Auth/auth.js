@@ -60,17 +60,3 @@ router.post('/Register', async (req, res, next) =>{
 
 
 module.exports = router;
-// router.post('/register', async (req, res, next) => {
-//     const { cardHolderName,cardNumber,expiration,cvv,zipCode } = req.body;   
-//     try {
-//         const paymentInfo = await prisma.payment.create({
-//             data:{cardHolderName,
-//             cardNumber,
-//             expiration,
-//             cvv,
-//             zipCode}
-//         })
-//     } catch (error) {
-        
-//     }
-// }
