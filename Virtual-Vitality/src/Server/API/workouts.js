@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 const workoutsRouter = express.Router();
@@ -10,8 +9,8 @@ workoutsRouter.get('/', async (req, res, next) => {
         // Use Prisma to retrieve all workout
         const allWorkouts = await prisma.workout.findMany({
             include: {
-                WorkoutType: true,
-                ExcercisesOnWorkouts: {
+                workoutType: true,
+                exercisesOnWorkouts: {
                     include: {
                         exercise: true
                     }
@@ -62,17 +61,3 @@ workoutsRouter.get('/', async (req, res, next) => {
 
 
 module.exports = workoutsRouter;
-=======
-const express = require("express")
-const prisma = require("../client.cjs")
-const router = express.Router();
-
-// /api/workouts
-router.get("/", async (req, res) => {
-
-    const allWorkouts = await prisma.workout.findMany();
-    res.send(allWorkouts)
-})
-
-module.exports = router;
->>>>>>> main

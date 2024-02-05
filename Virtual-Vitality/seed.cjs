@@ -5,14 +5,14 @@ const bcrypt = require("bcrypt");
 
 const saltrounds = 5;
 
-async function seed () {
+async function seed() {
     const hashedUser1 = await bcrypt.hash("password", saltrounds);
     const user1 = await prisma.user.create({
         data: {
             name: "Peng",
             email: "peng@yahoo.com",
             userName: "peng123",
-            password : hashedUser1,
+            password: hashedUser1,
         },
     });
 
@@ -22,7 +22,7 @@ async function seed () {
             name: "Sebastian",
             email: "seb@gmail.com",
             userName: "top coach 123",
-            password : hashedUser2,
+            password: hashedUser2,
         },
     });
 
@@ -32,7 +32,7 @@ async function seed () {
             name: "Jaylen",
             email: "jaylen@yahoo.com",
             userName: "Jay3",
-            password : hashedUser3,
+            password: hashedUser3,
         },
     });
 
@@ -42,7 +42,7 @@ async function seed () {
             name: "Chris",
             email: "chris@aol.com",
             userName: "Chris45",
-            password : hashedUser4,
+            password: hashedUser4,
         },
     });
 
@@ -52,7 +52,7 @@ async function seed () {
             name: "Jamari",
             email: "jamari@yahoo.com",
             userName: "Jamari334",
-            password : hashedUser5,
+            password: hashedUser5,
         },
     });
 
@@ -62,22 +62,23 @@ async function seed () {
             name: "Carter",
             email: "carter@yahoo.com",
             userName: "Carter222",
-            password : hashedUser6,
+            password: hashedUser6,
         },
     });
-    
+
     const workoutType1 = await prisma.workoutType.create({
         data: {
             name: "Weight Lifting",
         }
     });
-    
+
     const workOut1 = await prisma.workout.create({
-       data: {
-           name: "Build Muscle",
-           workoutTypeId: 1,
-           description: "great for the core",
-       },
+        data: {
+            name: "Build Muscle",
+            workoutTypeId: 1,
+            description: "great for the core",
+            difficulty: "Beginner",
+        },
     });
 
     const workoutType2 = await prisma.workoutType.create({
@@ -91,41 +92,131 @@ async function seed () {
             name: "Weight Lost",
             workoutTypeId: 2,
             description: "great for intense workouts",
+            difficulty: "Intermediate",
         },
-     });
+    });
 
-   
-     const coach1 = await prisma.coach.create({
+    const workoutType3 = await prisma.workoutType.create({
+        data: {
+            name: "Yoga",
+        }
+    });
+
+    const workOut3 = await prisma.workout.create({
+        data: {
+            name: "Mindful Stretching",
+            workoutTypeId: 3,
+            description: "Relaxing yoga routine",
+            difficulty: "Beginner",
+        },
+    });
+
+    const workoutType4 = await prisma.workoutType.create({
+        data: {
+            name: "Pilates",
+        }
+    });
+
+    const workOut4 = await prisma.workout.create({
+        data: {
+            name: "Pilates Sculpt",
+            workoutTypeId: 4,
+            description: "Sculpt and tone your body with Pilates",
+            difficulty: "Intermediate",
+        },
+    });
+
+    const workoutType5 = await prisma.workoutType.create({
+        data: {
+            name: "Strength Training",
+        }
+    });
+
+    const workOut5 = await prisma.workout.create({
+        data: {
+            name: "Strength and Conditioning",
+            workoutTypeId: 5,
+            description: "Full-body strength training session",
+            difficulty: "Advanced",
+        },
+    });
+
+    const workoutType6 = await prisma.workoutType.create({
+        data: {
+            name: "Cycling",
+        }
+    });
+
+    const workOut6 = await prisma.workout.create({
+        data: {
+            name: "High-Intensity Cycling",
+            workoutTypeId: 6,
+            description: "Intense cycling workout for cardiovascular fitness",
+            difficulty: "Advanced",
+        },
+    });
+
+    const workoutType7 = await prisma.workoutType.create({
+        data: {
+            name: "CrossFit",
+        }
+    });
+
+    const workOut7 = await prisma.workout.create({
+        data: {
+            name: "CrossFit WOD",
+            workoutTypeId: 7,
+            description: "CrossFit workout of the day",
+            difficulty: "Advanced",
+        },
+    });
+
+    const workoutType8 = await prisma.workoutType.create({
+        data: {
+            name: "Swimming",
+        }
+    });
+
+    const workOut8 = await prisma.workout.create({
+        data: {
+            name: "Swim Training",
+            workoutTypeId: 8,
+            description: "Training program for improving swimming techniques",
+            difficulty: "Intermediate",
+        },
+    });
+
+    const coach1 = await prisma.coach.create({
         data: {
             name: "Jamari",
             isNutritionist: false,
             imgURL: "add image here",
-            workoutTypes: { connect: [workoutType1]} ,
+            workoutTypes: { connect: [workoutType1] },
         },
-     });
+    });
 
 
-     const coach2 = await prisma.coach.create({
+    const coach2 = await prisma.coach.create({
         data: {
             name: "Seb",
             isNutritionist: false,
             imgURL: "add image here",
-            workoutTypes: { connect: [workoutType2]} ,
+            workoutTypes: { connect: [workoutType2] },
         },
-     });
+    });
 
-     const coach3 = await prisma.coach.create({
+    const coach3 = await prisma.coach.create({
         data: {
             name: "Carter",
             isNutritionist: true,
             imgURL: "add image here",
-            workoutTypes: { connect: [workoutType1]} ,
+            workoutTypes: { connect: [workoutType1] },
         },
-     });
+    });
 
 
 
-     const exercise1 = await prisma.excercise.create({
+    const exercise1 = await prisma.exercise.create({
         data: {
             name: "Push Ups",
             muscleGroup: "upper body",
@@ -133,9 +224,9 @@ async function seed () {
             imgUrl: "./src/Assets/Pushup.jpg",
             videoLink: "https://www.youtube.com/embed/1Pi0w8bUHPY",
         },
-     });
+    });
 
-     const exercise2 = await prisma.excercise.create({
+    const exercise2 = await prisma.exercise.create({
         data: {
             name: "Jumping Jacks",
             muscleGroup: "full body",
@@ -143,8 +234,8 @@ async function seed () {
             imgUrl: "./src/Assets/JumpingJack.jpg",
             videoLink: "https://www.youtube.com/embed/nwaFHDQP2YU?si=icEG3nitmvy0gUos",
         },
-     });
-     const exercise3 = await prisma.excercise.create({
+    });
+    const exercise3 = await prisma.exercise.create({
         data: {
             name: "Sit Ups",
             muscleGroup: "stomach",
@@ -152,9 +243,9 @@ async function seed () {
             imgUrl: "./src/Assets/Situp.jpg",
             videoLink: "https://www.youtube.com/embed/PvbA9V2_2Wk?si=AehfyiA0jHtYjv6z",
         },
-     });
+    });
 
-     const exercise4 = await prisma.excercise.create({
+    const exercise4 = await prisma.exercise.create({
         data: {
             name: "Squats",
             muscleGroup: "glutes",
@@ -162,9 +253,9 @@ async function seed () {
             imgUrl: "./src/Assets/Squat.jpg",
             videoLink: "https://www.youtube.com/embed/Toq-5vzwdFU?si=G8FT-Z6lHKnjwZVo",
         },
-     });
+    });
 
-     const exercise5 = await prisma.excercise.create({
+    const exercise5 = await prisma.exercise.create({
         data: {
             name: "Burpees",
             muscleGroup: "full body",
@@ -172,10 +263,10 @@ async function seed () {
             imgUrl: "./src/Assets/Burpee.jpg",
             videoLink: "https://www.youtube.com/embed/auBLPXO8Fww?si=bT1uS93WI-6T-cuf",
         },
-     });
+    });
 
 
-     const exercise6 = await prisma.excercise.create({
+    const exercise6 = await prisma.exercise.create({
         data: {
             name: "Lunges",
             muscleGroup: "legs",
@@ -183,9 +274,9 @@ async function seed () {
             imgUrl: "./src/Assets/Lunge.jpg",
             videoLink: "https://www.youtube.com/embed/DlhojghkaQ0?si=FdSZdx78k5ufMXbU",
         },
-     });
+    });
 
-     const exercise7 = await prisma.excercise.create({
+    const exercise7 = await prisma.exercise.create({
         data: {
             name: "Running",
             muscleGroup: "legs and core",
@@ -193,9 +284,9 @@ async function seed () {
             imgUrl: "./src/Assets/Running.jpg",
             videoLink: "https://www.youtube.com/embed/3r7d4qhKCp8?si=lkigFMxshzzf2Coy",
         },
-     });
+    });
 
-     const exercise8 = await prisma.excercise.create({
+    const exercise8 = await prisma.exercise.create({
         data: {
             name: "Jump Rope",
             muscleGroup: "full body",
@@ -203,9 +294,9 @@ async function seed () {
             imgUrl: "./src/Assets/JumpingRope.jpg",
             videoLink: "https://www.youtube.com/embed/Z1DSRtSA61o?si=30SGCWy0t0npsY5U",
         },
-     });
+    });
 
-     const exercise9 = await prisma.excercise.create({
+    const exercise9 = await prisma.exercise.create({
         data: {
             name: "Planks",
             muscleGroup: "core",
@@ -213,9 +304,9 @@ async function seed () {
             imgUrl: "./src/Assets/Plank.jpg",
             videoLink: "https://www.youtube.com/embed/4e-E9tic0V8?si=x4x_IXyGdhARPyyM",
         },
-     });
+    });
 
-     const exercise10 = await prisma.excercise.create({
+    const exercise10 = await prisma.exercise.create({
         data: {
             name: "Swimming",
             muscleGroup: "full body",
@@ -223,60 +314,212 @@ async function seed () {
             imgUrl: "./src/Assets/Swimming.jpg",
             videoLink: "https://www.youtube.com/embed/hY4YileHEiA?si=9-l9kMvjNeqUqz8l",
         },
-     });
+    });
 
-
-
-     const payment1 = await prisma.payment.create({
+    const payment1 = await prisma.payment.create({
         data: {
             cardHolderName: user1.name,
             cardNumber: 123456789,
             expiration: "12/34",
             cvv: 123,
             zipCode: 12345,
-            userId: 1, 
+            userId: 1,
         }
-     });
+    });
 
-     const excerciseToWorkout = await prisma.excercisesOnWorkouts.create({
-        data: {
-            excerciseId: (1,3),
-            workoutId: 1,
-            excerciseReps: 5,
-            excerciseSets: 2,
+    const exerciseToWorkout = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 1,
+                workoutId: 1,
+                exerciseReps: 7,
+                exerciseSets: 3,
+            },
+            {
+                exerciseId: 2,
+                workoutId: 1,
+                exerciseReps: 5,
+                exerciseSets: 3,
+            },
+            {
+                exerciseId: 3,
+                workoutId: 1,
+                exerciseReps: 7,
+                exerciseSets: 2,
+            },
+        ]
+    });
 
-        }
-     });
+    const exerciseToWorkout2 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 4,
+                workoutId: 2,
+                exerciseReps: 8,
+                exerciseSets: 2,
+            },
+            {
+                exerciseId: 5,
+                workoutId: 2,
+                exerciseReps: 5,
+                exerciseSets: 4,
+            },
+            {
+                exerciseId: 6,
+                workoutId: 2,
+                exerciseReps: 9,
+                exerciseSets: 2,
+            },
+        ]
+    });
 
-      await prisma.excercisesOnWorkouts.create({
-        data: {
-            excerciseId: (2,1),
-            workoutId: 1,
-            excerciseReps: 42,
-            excerciseSets: 65,
+    const exerciseToWorkout3 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 7,
+                workoutId: 3,
+                exerciseReps: 8,
+                exerciseSets: 2,
+            },
+            {
+                exerciseId: 8,
+                workoutId: 3,
+                exerciseReps: 4,
+                exerciseSets: 2,
+            },
+            {
+                exerciseId: 9,
+                workoutId: 3,
+                exerciseReps: 8,
+                exerciseSets: 3,
+            },
+        ]
+    });
 
-        }
-     });
+    const exerciseToWorkout4 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 10,
+                workoutId: 4,
+                exerciseReps: 3,
+                exerciseSets: 5,
+            },
+            {
+                exerciseId: 2,
+                workoutId: 4,
+                exerciseReps: 2,
+                exerciseSets: 6,
+            },
+            {
+                exerciseId: 4,
+                workoutId: 4,
+                exerciseReps: 6,
+                exerciseSets: 4,
+            },
+        ]
+    });
 
-     const excerciseToWorkout2 = await prisma.excercisesOnWorkouts.create({
-        data: {
-            excerciseId: (2,1),
-            workoutId: 2,
-            excerciseReps: 5,
-            excerciseSets: 2,
+    const exerciseToWorkout5 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 6,
+                workoutId: 5,
+                exerciseReps: 2,
+                exerciseSets: 7,
+            },
+            {
+                exerciseId: 8,
+                workoutId: 5,
+                exerciseReps: 6,
+                exerciseSets: 3,
+            },
+            {
+                exerciseId: 10,
+                workoutId: 5,
+                exerciseReps: 4,
+                exerciseSets: 3,
+            },
+        ]
+    });
 
-        }
-     });
+    const exerciseToWorkout6 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 1,
+                workoutId: 6,
+                exerciseReps: 5,
+                exerciseSets: 2,
+            },
+            {
+                exerciseId: 3,
+                workoutId: 6,
+                exerciseReps: 6,
+                exerciseSets: 4,
+            },
+            {
+                exerciseId: 5,
+                workoutId: 6,
+                exerciseReps: 8,
+                exerciseSets: 3,
+            },
+        ]
+    });
+
+    const exerciseToWorkout7 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 7,
+                workoutId: 7,
+                exerciseReps: 5,
+                exerciseSets: 3,
+            },
+            {
+                exerciseId: 9,
+                workoutId: 7,
+                exerciseReps: 3,
+                exerciseSets: 3,
+            },
+            {
+                exerciseId: 10,
+                workoutId: 7,
+                exerciseReps: 4,
+                exerciseSets: 4,
+            },
+        ]
+    });
+
+    const exerciseToWorkout8 = await prisma.exercisesOnWorkouts.createMany({
+        data: [
+            {
+                exerciseId: 1,
+                workoutId: 8,
+                exerciseReps: 6,
+                exerciseSets: 3,
+            },
+            {
+                exerciseId: 4,
+                workoutId: 8,
+                exerciseReps: 3,
+                exerciseSets: 4,
+            },
+            {
+                exerciseId: 7,
+                workoutId: 8,
+                exerciseReps: 2,
+                exerciseSets: 6,
+            },
+        ]
+    });
 
 
 
 }
 seed()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+    .then(async () => {
+        await prisma.$disconnect();
+    })
+    .catch(async (e) => {
+        console.error(e);
+        await prisma.$disconnect();
+        process.exit(1);
+    });
