@@ -4,6 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import ExerciseDetails from './SingleWorkout-page';
+import Modal from 'react-bootstrap/Modal';
 
 const workoutPage = () => {
   const [difficultyFilter, setDifficultyFilter] = useState(null);
@@ -36,7 +37,8 @@ const workoutPage = () => {
   }, []);
 
   const handlePageChange = (page) => {
-    setCurrentPage(page); 
+    console.log(page);
+    setCurrentPage(page);
   };
   
 
@@ -79,8 +81,8 @@ const workoutPage = () => {
         {filteredWorkouts.slice(startIndex, endIndex).map((workout, workoutIndex) => {
           return(
           <Card className='relative' style={{ maxWidth: '12rem', height: '480px', margin: '0 auto', marginBottom: '15px', marginTop: '15px' }} key={workout.id}>
-            <Card.Body style={{fontSize: '0.9rem'}}>
-              <Card.Title style={{ borderBottom: '2px solid #ccc', background: '#f0f0f0', fontSize: '1.1rem'}}>
+            <Card.Body style={{ fontSize: '0.9rem' }}>
+              <Card.Title style={{ borderBottom: '2px solid #ccc', background: '#f0f0f0', fontSize: '1.1rem' }}>
                 {workout.workoutType.name}
               </Card.Title>
               <div style={{ borderTop: '2px solid #ccc', background: '#e0e0e0', padding: '8px' }}>
