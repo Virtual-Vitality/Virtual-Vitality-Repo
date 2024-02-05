@@ -73,21 +73,12 @@ async function seed() {
     });
 
     const workOut1 = await prisma.workout.create({
-<<<<<<< HEAD
         data: {
             name: "Build Muscle",
             workoutTypeId: 1,
             description: "great for the core",
             difficulty: "Beginner",
         },
-=======
-       data: {
-           name: "Build Muscle",
-           workoutTypeId: 1,
-           description: "great for the core",
-           difficulty: "Beginner"
-       },
->>>>>>> main
     });
 
     const workoutType2 = await prisma.workoutType.create({
@@ -101,66 +92,11 @@ async function seed() {
             name: "Weight Lost",
             workoutTypeId: 2,
             description: "great for intense workouts",
-<<<<<<< HEAD
             difficulty: "Intermediate",
-=======
-            difficulty: "Beginner"
->>>>>>> main
         },
     });
 
-<<<<<<< HEAD
     const workoutType3 = await prisma.workoutType.create({
-=======
-     const workoutType3 = await prisma.workoutType.create({
-        data: {
-            name: "Cardio",
-        }
-    });
-    
-    const workOut3 = await prisma.workout.create({
-       data: {
-           name: "Get a faster sprint",
-           workoutTypeId: 3,
-           description: "great for the calves",
-           difficulty: "Intermediate"
-       },
-    });
-
-    const workoutType4 = await prisma.workoutType.create({
-        data: {
-            name: "Weight Lifting",
-        }
-    });
-    
-    const workOut4 = await prisma.workout.create({
-       data: {
-           name: "Build fighting ability",
-           workoutTypeId: 4,
-           description: "great for the core",
-           difficulty: "Intermediate"
-       },
-    });
-
-    const workoutType5 = await prisma.workoutType.create({
-        data: {
-            name: "Calesthenics",
-        }
-    });
-    
-    const workOut5 = await prisma.workout.create({
-       data: {
-           name: "Build Flexible Muscle",
-           workoutTypeId: 5,
-           description: "great for the back",
-           difficulty: "Advanced"
-       },
-    });
-
-
-   
-     const coach1 = await prisma.coach.create({
->>>>>>> main
         data: {
             name: "Yoga",
         }
@@ -252,17 +188,10 @@ async function seed() {
 
     const coach1 = await prisma.coach.create({
         data: {
-<<<<<<< HEAD
-            name: "Jamari",
-            isNutritionist: false,
-            imgURL: "add image here",
-            workoutTypes: { connect: [workoutType1] },
-=======
             name: "Jennifer",
             isNutritionist: true,
             imgURL: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGhlYWRzaG90cyUyMG9mJTIwcGVvcGxlfGVufDB8fDB8fHww",
             workoutTypes: { connect: [workoutType1]} ,
->>>>>>> main
         },
     });
 
@@ -271,33 +200,17 @@ async function seed() {
         data: {
             name: "Seb",
             isNutritionist: false,
-<<<<<<< HEAD
-            imgURL: "add image here",
-            workoutTypes: { connect: [workoutType2] },
-=======
             imgURL: "https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxwZW9wbGV8ZW58MHx8MHx8fDA%3D",
             workoutTypes: { connect: [workoutType2]} ,
->>>>>>> main
         },
     });
 
     const coach3 = await prisma.coach.create({
         data: {
             name: "Carter",
-<<<<<<< HEAD
-            isNutritionist: true,
-            imgURL: "add image here",
-            workoutTypes: { connect: [workoutType1] },
-        },
-    });
-
-
-
-    const exercise1 = await prisma.exercise.create({
-=======
             isNutritionist: false,
             imgURL: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHNob3RzJTIwb2YlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D",
-            workoutTypes: { connect: [workoutType3]} ,
+            workoutTypes: { connect: [workoutType4]} ,
         },
      });
      const coach4 = await prisma.coach.create({
@@ -305,7 +218,7 @@ async function seed() {
             name: "Peter",
             isNutritionist: false,
             imgURL: "https://images.unsplash.com/photo-1504810370725-2585de12e6ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGhlYWRzaG90cyUyMG9mJTIwcGVvcGxlfGVufDB8fDB8fHww",
-            workoutTypes: {connect: [workoutType4]}
+            workoutTypes: {connect: [workoutType6]}
         }
      })
      const coach5 =await prisma.coach.create({
@@ -320,7 +233,6 @@ async function seed() {
 
 
      const exercise1 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Push Ups",
             muscleGroup: "upper body",
@@ -330,11 +242,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise2 = await prisma.exercise.create({
-=======
      const exercise2 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Jumping Jacks",
             muscleGroup: "full body",
@@ -342,13 +250,8 @@ async function seed() {
             imgUrl: "/assets/JumpingJack.jpg",
             videoLink: "https://www.youtube.com/embed/nwaFHDQP2YU?si=icEG3nitmvy0gUos",
         },
-<<<<<<< HEAD
-    });
-    const exercise3 = await prisma.exercise.create({
-=======
      });
      const exercise3 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Sit Ups",
             muscleGroup: "stomach",
@@ -358,11 +261,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise4 = await prisma.exercise.create({
-=======
      const exercise4 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Squats",
             muscleGroup: "glutes",
@@ -372,11 +271,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise5 = await prisma.exercise.create({
-=======
      const exercise5 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Burpees",
             muscleGroup: "full body",
@@ -387,11 +282,7 @@ async function seed() {
     });
 
 
-<<<<<<< HEAD
-    const exercise6 = await prisma.exercise.create({
-=======
      const exercise6 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Lunges",
             muscleGroup: "legs",
@@ -401,11 +292,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise7 = await prisma.exercise.create({
-=======
      const exercise7 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Running",
             muscleGroup: "legs and core",
@@ -415,11 +302,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise8 = await prisma.exercise.create({
-=======
      const exercise8 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Jump Rope",
             muscleGroup: "full body",
@@ -429,11 +312,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise9 = await prisma.exercise.create({
-=======
      const exercise9 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Planks",
             muscleGroup: "core",
@@ -443,11 +322,7 @@ async function seed() {
         },
     });
 
-<<<<<<< HEAD
-    const exercise10 = await prisma.exercise.create({
-=======
      const exercise10 = await prisma.exercise.create({
->>>>>>> main
         data: {
             name: "Swimming",
             muscleGroup: "full body",
@@ -468,8 +343,6 @@ async function seed() {
         }
     });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     const exerciseToWorkout = await prisma.exercisesOnWorkouts.createMany({
         data: [
             {
@@ -492,20 +365,6 @@ async function seed() {
             },
         ]
     });
-=======
-     const excerciseToWorkout = await prisma.excercisesOnWorkouts.create
-=======
->>>>>>> main
-     
-
-     const exerciseToWorkout = await prisma.exercisesOnWorkouts.create({
-
-        data: {
-            exerciseId: (1,3),
-            workoutId: 1,
-            exerciseReps: 5,
-            exerciseSets: 2,
->>>>>>> main
 
     const exerciseToWorkout2 = await prisma.exercisesOnWorkouts.createMany({
         data: [
@@ -530,7 +389,6 @@ async function seed() {
         ]
     });
 
-<<<<<<< HEAD
     const exerciseToWorkout3 = await prisma.exercisesOnWorkouts.createMany({
         data: [
             {
@@ -553,16 +411,6 @@ async function seed() {
             },
         ]
     });
-=======
-
-<<<<<<< HEAD
-      await prisma.excercisesOnWorkouts.create({
-        data: {
-            excerciseId: (2,1),
-            workoutId: 1,
-            excerciseReps: 42,
-            excerciseSets: 65,
->>>>>>> main
 
     const exerciseToWorkout4 = await prisma.exercisesOnWorkouts.createMany({
         data: [
@@ -610,7 +458,6 @@ async function seed() {
         ]
     });
 
-<<<<<<< HEAD
     const exerciseToWorkout6 = await prisma.exercisesOnWorkouts.createMany({
         data: [
             {
@@ -679,50 +526,6 @@ async function seed() {
             },
         ]
     });
-=======
-=======
->>>>>>> main
-     const exerciseToWorkout2 = await prisma.exercisesOnWorkouts.create({
-        data: {
-            exerciseId: (2,1),
-            workoutId: 2,
-            exerciseReps: 5,
-            exerciseSets: 2,
-
-        }
-     });
-
-     const exerciseToWorkout3 = await prisma.exercisesOnWorkouts.create({
-        data: {
-            exerciseId: (1,3,10,5),
-            workoutId: 3,
-            exerciseReps: 5,
-            exerciseSets: 2,
-
-        }
-     });
-
-     const exerciseToWorkout4 = await prisma.exercisesOnWorkouts.create({
-        data: {
-            exerciseId: (5,6,7),
-            workoutId: 4,
-            exerciseReps: 5,
-            exerciseSets: 2,
-
-        }
-     });
-
-     const exerciseToWorkout5 = await prisma.exercisesOnWorkouts.create({
-        data: {
-            exerciseId: (8,9,10),
-            workoutId: 5,
-            exerciseReps: 5,
-            exerciseSets: 2,
-
-
-        }
-     });
->>>>>>> main
 
 
 
