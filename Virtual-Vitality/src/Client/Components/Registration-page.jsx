@@ -49,7 +49,7 @@ const Example_function3 = () => {
         password: passwordInput,
       });
       window.localStorage.setItem("token", result.data.token)
-      console.log(result.data); //navigate(`/`);
+     navigate(`/`);
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +65,6 @@ const Example_function3 = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        //console.log(result.id)
         setUser(result);
       } catch (error) {
         console.error(error.message);
@@ -73,7 +72,6 @@ const Example_function3 = () => {
     };
     getUser();
   }, [token]);
-  console.log(user.id)
   //end of /me route to get user.id
   //Start of /payment route to store payment
 

@@ -30,6 +30,13 @@ usersRouter.get('/:id', async (req, res, next) => {
     try {
         const user = await prisma.user.findUnique({
             where: { id: userId },
+            include: {
+                appointments: {
+                    include: {
+                        coach: true,
+                    }
+                }
+            }
         });
         res.send(user);
     } catch (error) {

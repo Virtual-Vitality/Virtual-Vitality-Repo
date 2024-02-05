@@ -27,7 +27,6 @@ const workoutPage = () => {
     async function getWorkout() {
       try {
         const { data: results } = await axios.get("/api/workouts");
-        console.log(results);
         setWorkouts(results);
       } catch (error) {
         console.error(error);
@@ -37,8 +36,6 @@ const workoutPage = () => {
   }, []);
 
   const handlePageChange = (page) => {
-    console.log('Hello')
-    console.log(page);
     setCurrentPage(page); 
   };
   
@@ -80,7 +77,6 @@ const workoutPage = () => {
       </ButtonGroup>
       <div className="grid grid-cols-3 gap-4">
         {filteredWorkouts.slice(startIndex, endIndex).map((workout, workoutIndex) => {
-          console.log(workout)
           return(
           <Card className='relative' style={{ maxWidth: '12rem', height: '480px', margin: '0 auto', marginBottom: '15px', marginTop: '15px' }} key={workout.id}>
             <Card.Body style={{fontSize: '0.9rem'}}>

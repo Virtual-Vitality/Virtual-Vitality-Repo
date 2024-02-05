@@ -16,7 +16,6 @@ router.post('/login', async (req, res, next) => {
         const user = await prisma.user.findUnique({
             where: { userName }, // Replace 'email' with 'username' if 'username' is unique
         });
-            console.log(user);
         if (user && await bcrypt.compare(password, user.password)) {
             const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '24h' });
             res.json({ token, user });
@@ -50,11 +49,9 @@ router.post('/Register', async (req, res, next) =>{
 			process.env.JWT_SECRET);
 		res.status(201).send({token});
         res.send(user)
-        console.log(`This works 1`)
     } catch (error) {
         console.log(error)
     } 
-    console.log(`this works`)
 });
 
 

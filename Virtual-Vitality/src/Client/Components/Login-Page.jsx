@@ -18,7 +18,6 @@ try {
         "password":passwordLoginInput
       });
       window.localStorage.setItem("token", result.data.token)
-      console.log(`logged in`, result)
       navigate("/");
     } catch (error) {
       console.log(error);
