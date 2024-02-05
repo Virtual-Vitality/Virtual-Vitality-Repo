@@ -30,7 +30,7 @@ try {
     return(
 
       <div className='flex items-center justify-center'>
-      <Form onSubmit={handleSubmit} className=' bg-slate-500 rounded-md p-2 '>
+      <Form onSubmit={handleSubmit} className=' bg-slate-500 rounded-md p-2 border-zinc-950 border-3'>
       <Form.Group className="mb-3" controlId="formGroupUserName">
         <Form.Label>UserName</Form.Label>
         <Form.Control 
