@@ -5,6 +5,7 @@ const router = express.Router();
 // /api/workouts
 router.get("/", async (req, res) => {
 
+
     const allWorkouts = await prisma.workout.findMany({
         include: {
             workoutType: true ,
@@ -15,7 +16,9 @@ router.get("/", async (req, res) => {
             }
         }
     });
-    res.send(allWorkouts)
+    res.send(allWorkouts);
+
+    
    
 })
 
