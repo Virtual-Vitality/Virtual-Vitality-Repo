@@ -16,7 +16,6 @@ const Coaches = () => {
     async function getCoaches() {
       try {
         const { data: foundCoaches } = await axios.get("/api/coaches")
-        console.log(foundCoaches)
         setCoaches(foundCoaches);
       } catch (error) {
         console.error(error);
@@ -31,11 +30,12 @@ const Coaches = () => {
      
      <div className="grid grid-cols-3 gap-4">
           {coaches.map((coach) => (
-            <Card style={{ width: '18rem'}} key={coach.id}>
+            <Card style={{ width: '18rem'}} key={coach.id}
+            className='border-zinc-950 border-3'>
               <Card.Img width="100%" height="150" variant="top" src={coach.imgURL} alt='Coach Photo' />
               <Card.Body >
                 <Card.Title>{coach.name}</Card.Title>
-                <Card.Text>{coach.workoutTypes} {console.log(coach)}</Card.Text>
+                <Card.Text>{coach.workoutTypes}</Card.Text>
                 <br/>
               </Card.Body>
             </Card>

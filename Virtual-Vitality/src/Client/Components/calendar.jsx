@@ -26,7 +26,6 @@ const Scheduler = () => {
               Authorization: `Bearer ${token}`,
             },
           });
-          console.log(result.id)
           setUser(result);
         } catch (error) {
           console.error(error.message);
@@ -39,7 +38,6 @@ const Scheduler = () => {
       async function getCoaches() {
         try {
           const { data: foundCoaches } = await axios.get("/api/coaches");
-          console.log(foundCoaches)
           setCoaches(foundCoaches);
         } catch (error) {
           console.error(error);
@@ -50,14 +48,12 @@ const Scheduler = () => {
 
     //handleSubmit starts here|Attach coach ID to drop downs with Names
     const dropdownHandleCoach = (coach)=>{
-      console.log(coach.id)
       setSelectedCoach(coach)
     
     } 
     //appointments
     const makeApt = async(event)=>{
       event.preventDefault();
-      console.log("Hello")
       try {
         const result = await axios.post("/api/appointments", {
            
@@ -66,7 +62,6 @@ const Scheduler = () => {
             userId : user.id
           
         })
-        console.log("result",result)
       } catch (error) {
         console.log("error",error)
       }
@@ -75,8 +70,9 @@ const Scheduler = () => {
     return (
       <div className="flex items-center justify-center">
         <form>
-        <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-5 flex-col "> 
+        <div className= " flex items-center justify-center  bg-slate-700 rounded-md p-5 flex-col border-zinc-950 border-3 "> 
         <label className=" bg-black text-cyan-50">
+          <h1>Scheduling Page</h1>
         
         <DatePicker 
          className="bg-slate-500 rounded-md p-2"
@@ -91,7 +87,6 @@ const Scheduler = () => {
         
         <DropdownButton id="dropdown-basic-button" title={selectedCoach? selectedCoach.name : "Pick your coach"}>
           {coaches.map((coach)=>{ 
-            {console.log(coach)}
             return(<Dropdown.Item onClick= {()=>dropdownHandleCoach(coach)} >{coach.name}</Dropdown.Item>)
            })}
         </DropdownButton>
