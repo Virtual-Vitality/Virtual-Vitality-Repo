@@ -145,6 +145,7 @@ async function seed() {
         data: {
             name: "Cycling",
         }
+
     });
 
     const workOut6 = await prisma.workout.create({
@@ -167,10 +168,12 @@ async function seed() {
             name: "CrossFit WOD",
             workoutTypeId: 7,
             description: "CrossFit workout of the day",
-            difficulty: "Advanced",
-        },
+            difficulty: "Intermediate",
     });
 
+
+   
+   
     const workoutType8 = await prisma.workoutType.create({
         data: {
             name: "Swimming",
@@ -194,6 +197,7 @@ async function seed() {
             workoutTypes: { connect: [workoutType1]} ,
         },
     });
+
 
     const coach2 = await prisma.coach.create({
         data: {

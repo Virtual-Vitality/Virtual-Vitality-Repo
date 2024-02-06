@@ -10,7 +10,7 @@ const Example_function6 = () => {
             <div>
             <Container className="">
                 <Carousel fade className=" border-orange-400" >
-                    <Carousel.Item height={420} width={900} className='p - 0 d-flex justify-content-center'>
+                    <Carousel.Item height={420} width={900} className='p - 0 d-flex justify-content-center border-zinc-950 border-3'>
                         <img
                             width={900} height={420}
                             src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -77,7 +77,9 @@ const Example_function6 = () => {
                 </Card>
 
                 <Card className='relative border-zinc-950 border-3' style={{ width: '18rem', height: '21rem' }}>
+
                     <Card.Img variant="top" src="https://plus.unsplash.com/premium_photo-1664302148512-ddea30cd2a92?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGhlYWx0aHl8ZW58MHx8MHx8fDA%3D" />
+
 
                     <Card.Body>
                         <Card.Title>Nutritional </Card.Title>
@@ -88,7 +90,9 @@ const Example_function6 = () => {
                 </Card>
                
                 <Card className='relative border-zinc-950 border-3' style={{ width: '18rem', height: '21rem' }}>
+
                     <Card.Img variant="top" src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGV4ZXJjaXNlfGVufDB8fDB8fHww" />
+
                     <Card.Body>
                         <Card.Title>Aerobics</Card.Title>
                         <Card.Text>
