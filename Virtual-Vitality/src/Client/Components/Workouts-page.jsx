@@ -6,13 +6,35 @@ import axios from 'axios';
 import ExerciseDetails from './SingleWorkout-page';
 import Modal from 'react-bootstrap/Modal';
 
+const MyVerticallyCenteredModal = (props) => {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Exercise Details
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+      <ExerciseDetails exerciseOnWorkout={props.selectedExercise} />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button style={{color:'black'}} onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 const workoutPage = () => {
   const [difficultyFilter, setDifficultyFilter] = useState(null);
 
   const [workouts, setWorkouts] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedExerciseIndex, setSelectedExerciseIndex] = useState(null);
   const itemsPerPage = 3; // Adjust as needed
 
   const filteredWorkouts = difficultyFilter
@@ -22,13 +44,14 @@ const workoutPage = () => {
   const totalPages = Math.ceil(filteredWorkouts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, filteredWorkouts.length);
-
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedExercise, setSelectedExercise] = useState(null);
 
   useEffect(() => {
+
     async function getWorkout() {
       try {
         const { data: results } = await axios.get("/api/workouts");
-        console.log(results);
         setWorkouts(results);
       } catch (error) {
         console.error(error);
@@ -38,7 +61,6 @@ const workoutPage = () => {
   }, []);
 
   const handlePageChange = (page) => {
-    console.log(page);
     setCurrentPage(page);
   };
 
@@ -67,10 +89,18 @@ const workoutPage = () => {
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
-  const handleDetailButtonClick = (index) => {
-    setSelectedExerciseIndex(index);
-  };
+  const handleDetailButtonClick = (exerciseOnWorkout) => {
+    console.log("Exercise details:", exerciseOnWorkout);
+    if (exerciseOnWorkout && exerciseOnWorkout) {
+        setSelectedExercise(exerciseOnWorkout);
+        setModalShow(true);
+    } else {
+        console.error("Exercise data is invalid:", exerciseOnWorkout);
+    }
+};
 
+  
+  // console.log(selectedExercise)
   return (
     <div>
       <ButtonGroup aria-label="Difficult level">
@@ -80,7 +110,6 @@ const workoutPage = () => {
       </ButtonGroup>
       <div className="grid grid-cols-3 gap-4">
         {filteredWorkouts.slice(startIndex, endIndex).map((workout, workoutIndex) => {
-          console.log(workout)
           return(
           <Card className='relative' style={{ maxWidth: '12rem', height: '480px', margin: '0 auto', marginBottom: '15px', marginTop: '15px' }} key={workout.id}>
             <Card.Body style={{ fontSize: '0.9rem' }}>
@@ -93,7 +122,7 @@ const workoutPage = () => {
                     <Card.Text> exerciseName: {exerciseOnWorkout.exercise.name}</Card.Text>
                     <Card.Text> exerciseReps: {exerciseOnWorkout.exerciseReps}</Card.Text>
                     <Card.Text> exerciseSets: {exerciseOnWorkout.exerciseSets}</Card.Text>
-                    <Button variant="outline-secondary" size="sm" style={{ fontSize: "0.7rem", color: "black" }} onClick={() => handleDetailButtonClick(index)}>
+                    <Button variant="outline-secondary" size="sm" style={{ fontSize: "0.7rem", color: "black" }} onClick={() => handleDetailButtonClick(exerciseOnWorkout.exercise)}>
                       Details
                     </Button>
                   </div>
@@ -104,9 +133,13 @@ const workoutPage = () => {
           </Card>
         )})}
       </div>
-      {selectedExerciseIndex !== null && (
-        <ExerciseDetails exerciseOnWorkout={filteredWorkouts[startIndex + selectedExerciseIndex]?.exercisesOnWorkouts[selectedExerciseIndex]} />
-      )}
+      <>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        selectedExercise={selectedExercise}
+      />
+    </>
 
       {totalPages > 1 && (
         <div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
