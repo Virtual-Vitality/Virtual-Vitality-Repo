@@ -63,7 +63,7 @@ const workoutPage = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-
+  
 
   const generateRandomColor = () => {
     // Generate a random hex color
@@ -123,6 +123,7 @@ const workoutPage = () => {
                     <Card.Text> exerciseReps: {exerciseOnWorkout.exerciseReps}</Card.Text>
                     <Card.Text> exerciseSets: {exerciseOnWorkout.exerciseSets}</Card.Text>
                     <Button variant="outline-secondary" size="sm" style={{ fontSize: "0.7rem", color: "black" }} onClick={() => handleDetailButtonClick(exerciseOnWorkout.exercise)}>
+
                       Details
                     </Button>
                   </div>
@@ -139,9 +140,8 @@ const workoutPage = () => {
         onHide={() => setModalShow(false)}
         selectedExercise={selectedExercise}
       />
-    </>
-
-      {totalPages > 1 && (
+      </>
+       {totalPages > 1 && (
         <div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
           {Array.from({ length: totalPages }, (_, index) => (
             <Button type="Button" key={index + 1} variant="outline-secondary" onClick={() => handlePageChange(index + 1)}>
@@ -153,4 +153,4 @@ const workoutPage = () => {
     </div>
   );
 };
-export default workoutPage;
+export default workoutPage

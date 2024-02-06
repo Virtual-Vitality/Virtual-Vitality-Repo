@@ -4,11 +4,10 @@ const prisma = new PrismaClient();
 
 async function authenticateToken(req, res, next) {
     const authHeader = req.headers.authorization;
-    console.log('Authorization Header:', authHeader);
     // Extract the token from the Authorization header
     // const token = authHeader && authHeader.split(' ')[1]; // Correctly extracts the token
     const [, token] = authHeader.split(" ");
-        // console.log(token);
+
 
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
@@ -16,7 +15,6 @@ async function authenticateToken(req, res, next) {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verifies the token
-        console.log(decoded.id)
 
         const user = await prisma.user.findUnique({
             where: {
