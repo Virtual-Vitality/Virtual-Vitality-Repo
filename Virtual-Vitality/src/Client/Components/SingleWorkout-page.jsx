@@ -10,9 +10,9 @@ const ExerciseDetails = ({ exerciseOnWorkout }) => {
 
   return (
     <div>
-      <h5>{exerciseOnWorkout.exercise.name}</h5>
-      <p>Muscle Group: {exerciseOnWorkout.exercise.muscleGroup}</p>
-      <p>Description: {exerciseOnWorkout.exercise.description}</p>
+      <h5>{exerciseOnWorkout.name}</h5>
+      <p>Muscle Group: {exerciseOnWorkout.muscleGroup}</p>
+      <p>Description: {exerciseOnWorkout.description}</p>
     </div>
   );
 };
