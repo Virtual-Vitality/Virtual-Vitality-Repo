@@ -145,6 +145,7 @@ async function seed() {
         data: {
             name: "Cycling",
         }
+
     });
 
     const workOut6 = await prisma.workout.create({
@@ -167,10 +168,12 @@ async function seed() {
             name: "CrossFit WOD",
             workoutTypeId: 7,
             description: "CrossFit workout of the day",
-            difficulty: "Advanced",
-        },
+            difficulty: "Intermediate",
     });
 
+
+   
+   
     const workoutType8 = await prisma.workoutType.create({
         data: {
             name: "Swimming",
@@ -207,7 +210,7 @@ async function seed() {
 
     const coach3 = await prisma.coach.create({
         data: {
-            name: "Carter",
+            name: "Rebecca",
             isNutritionist: false,
             imgURL: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHNob3RzJTIwb2YlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D",
             workoutTypes: { connect: [workoutType4]} ,
