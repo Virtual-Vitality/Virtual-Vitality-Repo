@@ -177,7 +177,7 @@ const Example_function3 = () => {
           
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="secondary" onClick={() => {
+          <Button variant="secondary" onClick={()=>{
             handleClose(), navigate("/");
           }}>
             Confirm Payment
