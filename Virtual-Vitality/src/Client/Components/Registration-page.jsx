@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useNavigate, useNavigation } from "react-router";
 
 
 const Example_function3 = () => {
@@ -49,7 +49,6 @@ const Example_function3 = () => {
         password: passwordInput,
       });
       window.localStorage.setItem("token", result.data.token)
-     navigate(`/`);
     } catch (error) {
       console.log(error);
     }
