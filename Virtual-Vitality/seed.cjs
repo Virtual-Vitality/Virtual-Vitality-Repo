@@ -169,6 +169,7 @@ async function seed() {
             workoutTypeId: 7,
             description: "CrossFit workout of the day",
             difficulty: "Intermediate",
+        }
     });
 
 
