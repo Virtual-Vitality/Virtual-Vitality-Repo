@@ -178,7 +178,9 @@ const Example_function3 = () => {
           
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={()=>{
+            handleClose(), navigate("/");
+          }}>
             Confirm Payment
           </Button>
           {/* <Button variant="primary">Understood</Button> */}
